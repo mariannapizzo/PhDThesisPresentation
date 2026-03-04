@@ -1,36 +1,34 @@
 %%
-%% Gruvbox Beamer Theme
+%% Gruvbox Light Beamer Theme
 %% Requires XeLaTeX or LuaLaTeX (for fontspec)
 %% Required fonts: Roboto Slab, Fira Sans
 %%
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthemeGruvbox}[2025/01/01 Gruvbox Dark Beamer Theme]
 
 \RequirePackage{fontspec}
 \RequirePackage{tikz}
 
-%% ── Gruvbox Dark Palette ──────────────────────────────────────────────────────
-\definecolor{gbBg}    {HTML}{282828}  % main background
-\definecolor{gbBg1}   {HTML}{3c3836}  % secondary background
-\definecolor{gbBg2}   {HTML}{504945}  % tertiary background
-\definecolor{gbBg3}   {HTML}{665c54}  % quaternary background
-\definecolor{gbBg4}   {HTML}{7c6f64}  % muted grey
-\definecolor{gbFg}    {HTML}{ebdbb2}  % main foreground
-\definecolor{gbFg2}   {HTML}{d5c4a1}  % secondary foreground
-\definecolor{gbFg3}   {HTML}{bdae93}  % tertiary foreground
-\definecolor{gbFg4}   {HTML}{a89984}  % muted foreground
-\definecolor{gbRed}   {HTML}{fb4934}  % bright red
-\definecolor{gbGreen} {HTML}{b8bb26}  % bright green
-\definecolor{gbYellow}{HTML}{fabd2f}  % bright yellow
-\definecolor{gbBlue}  {HTML}{83a598}  % bright blue
-\definecolor{gbPurple}{HTML}{d3869b}  % bright purple
-\definecolor{gbAqua}  {HTML}{8ec07c}  % bright aqua
-\definecolor{gbOrange}{HTML}{fe8019}  % bright orange
+%% ── Gruvbox Light Palette ─────────────────────────────────────────────────────
+\definecolor{gbBg}    {HTML}{f9f5d7}  % main background
+\definecolor{gbBg1}   {HTML}{fbf1c7}  % secondary background
+\definecolor{gbBg2}   {HTML}{ebdbb2}  % tertiary background
+\definecolor{gbBg3}   {HTML}{d5c4a1}  % quaternary background
+\definecolor{gbBg4}   {HTML}{bdae93}  % muted grey
+\definecolor{gbFg}    {HTML}{3c3836}  % main foreground
+\definecolor{gbFg2}   {HTML}{504945}  % secondary foreground
+\definecolor{gbFg3}   {HTML}{665c54}  % tertiary foreground
+\definecolor{gbFg4}   {HTML}{7c6f64}  % muted foreground
+\definecolor{gbRed}   {HTML}{cc241d}  % bright red
+\definecolor{gbGreen} {HTML}{98971a}  % bright green
+\definecolor{gbYellow}{HTML}{d79921}  % bright yellow
+\definecolor{gbBlue}  {HTML}{458588}  % bright blue
+\definecolor{gbPurple}{HTML}{b16286}  % bright purple
+\definecolor{gbAqua}  {HTML}{689d6a}  % bright aqua
+\definecolor{gbOrange}{HTML}{d65d0e}  % bright orange
 
 %% ── Accent color (customizable) ───────────────────────────────────────────────
 %% To change the accent color in your document:
-%%   \colorlet{gbAccentColor}{gbBlue}   % before or after \usetheme{Gruvbox}
-\colorlet{gbAccentColor}{gbGreen}
+%%   \colorlet{gbAccentColor}{gbBlue}   % before or after \usetheme{GruvboxLight}
+\colorlet{gbAccentColor}{gbBlue}
 
 %% ── Fonts ─────────────────────────────────────────────────────────────────────
 %% Roboto Slab → \rmfamily → titles and headings
@@ -46,27 +44,27 @@
 ]
 
 %% ── Beamer Colors ─────────────────────────────────────────────────────────────
-\setbeamercolor{normal text}         {fg=gbFg,     bg=gbBg}
+\setbeamercolor{normal text}         {fg=gbFg,           bg=gbBg}
 \setbeamercolor{alerted text}        {fg=gbAccentColor}
 \setbeamercolor{example text}        {fg=gbGreen}
 \setbeamercolor{structure}           {fg=gbAccentColor}
 \setbeamercolor{background canvas}   {bg=gbBg}
 
-\setbeamercolor{title}               {fg=gbAccentColor, bg=gbBg}
-\setbeamercolor{subtitle}            {fg=gbFg2,    bg=gbBg}
-\setbeamercolor{author}              {fg=gbFg,     bg=gbBg}
-\setbeamercolor{institute}           {fg=gbFg3,    bg=gbBg}
-\setbeamercolor{date}                {fg=gbFg3,    bg=gbBg}
+\setbeamercolor{title}               {fg=gbAccentColor,  bg=gbBg}
+\setbeamercolor{subtitle}            {fg=gbFg2,          bg=gbBg}
+\setbeamercolor{author}              {fg=gbFg,           bg=gbBg}
+\setbeamercolor{institute}           {fg=gbFg3,          bg=gbBg}
+\setbeamercolor{date}                {fg=gbFg3,          bg=gbBg}
 
-\setbeamercolor{frametitle}          {fg=gbAccentColor, bg=gbBg1}
-\setbeamercolor{framesubtitle}       {fg=gbFg2,    bg=gbBg1}
+\setbeamercolor{frametitle}          {fg=gbAccentColor,  bg=gbBg1}
+\setbeamercolor{framesubtitle}       {fg=gbFg2,          bg=gbBg1}
 
-\setbeamercolor{block title}         {fg=gbBg,     bg=gbAccentColor}
-\setbeamercolor{block body}          {fg=gbFg,     bg=gbBg1}
-\setbeamercolor{block title alerted} {fg=gbBg,     bg=gbOrange}
-\setbeamercolor{block body alerted}  {fg=gbFg,     bg=gbBg1}
-\setbeamercolor{block title example} {fg=gbBg,     bg=gbPurple}
-\setbeamercolor{block body example}  {fg=gbFg,     bg=gbBg1}
+\setbeamercolor{block title}         {fg=gbBg,           bg=gbAccentColor}
+\setbeamercolor{block body}          {fg=gbFg,           bg=gbBg1}
+\setbeamercolor{block title alerted} {fg=gbBg,           bg=gbOrange}
+\setbeamercolor{block body alerted}  {fg=gbFg,           bg=gbBg1}
+\setbeamercolor{block title example} {fg=gbBg,           bg=gbPurple}
+\setbeamercolor{block body example}  {fg=gbFg,           bg=gbBg1}
 
 \setbeamercolor{itemize item}        {fg=gbAccentColor}
 \setbeamercolor{itemize subitem}     {fg=gbOrange}
@@ -76,7 +74,7 @@
 \setbeamercolor{enumerate subsubitem}{fg=gbAqua}
 \setbeamercolor{description item}    {fg=gbAccentColor}
 
-\setbeamercolor{footline}            {fg=gbBg4,    bg=gbBg}
+\setbeamercolor{footline}            {fg=gbBg4,          bg=gbBg}
 \setbeamercolor{section in toc}      {fg=gbFg}
 \setbeamercolor{subsection in toc}   {fg=gbFg2}
 \setbeamercolor{caption name}        {fg=gbAccentColor}
@@ -145,7 +143,7 @@
       leftskip=0.7cm, rightskip=0.7cm]{frametitle}
     \usebeamerfont{frametitle}\insertframetitle%
     \ifx\insertframesubtitle\@empty\else
-      \hspace{0.55em}{\color{gbBg4}|}\hspace{0.4em}%
+      \hspace{0.55em}{\color{gbFg4}|}\hspace{0.4em}%
       \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}%
       \insertframesubtitle%
     \fi

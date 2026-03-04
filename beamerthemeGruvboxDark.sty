@@ -1,0 +1,170 @@
+%%
+%% Gruvbox Dark Beamer Theme
+%% Requires XeLaTeX or LuaLaTeX (for fontspec)
+%% Required fonts: Roboto Slab, Fira Sans
+%%
+
+\RequirePackage{fontspec}
+\RequirePackage{tikz}
+
+%% ── Gruvbox Dark Palette ──────────────────────────────────────────────────────
+\definecolor{gbBg}    {HTML}{282828}  % main background
+\definecolor{gbBg1}   {HTML}{3c3836}  % secondary background
+\definecolor{gbBg2}   {HTML}{504945}  % tertiary background
+\definecolor{gbBg3}   {HTML}{665c54}  % quaternary background
+\definecolor{gbBg4}   {HTML}{7c6f64}  % muted grey
+\definecolor{gbFg}    {HTML}{ebdbb2}  % main foreground
+\definecolor{gbFg2}   {HTML}{d5c4a1}  % secondary foreground
+\definecolor{gbFg3}   {HTML}{bdae93}  % tertiary foreground
+\definecolor{gbFg4}   {HTML}{a89984}  % muted foreground
+\definecolor{gbRed}   {HTML}{fb4934}  % bright red
+\definecolor{gbGreen} {HTML}{b8bb26}  % bright green
+\definecolor{gbYellow}{HTML}{fabd2f}  % bright yellow
+\definecolor{gbBlue}  {HTML}{83a598}  % bright blue
+\definecolor{gbPurple}{HTML}{d3869b}  % bright purple
+\definecolor{gbAqua}  {HTML}{8ec07c}  % bright aqua
+\definecolor{gbOrange}{HTML}{fe8019}  % bright orange
+
+%% ── Accent color (customizable) ───────────────────────────────────────────────
+%% To change the accent color in your document:
+%%   \colorlet{gbAccentColor}{gbBlue}   % before or after \usetheme{GruvboxDark}
+\colorlet{gbAccentColor}{gbGreen}
+
+%% ── Fonts ─────────────────────────────────────────────────────────────────────
+%% Roboto Slab → \rmfamily → titles and headings
+%% Fira Sans   → \sffamily → body text (Beamer default)
+\setmainfont{Roboto Slab}[
+  BoldFont  = {Roboto Slab Bold},
+  Scale     = MatchLowercase,
+]
+\setsansfont{Fira Sans}[
+  Scale          = MatchLowercase,
+  BoldFont       = {Fira Sans Bold},
+  ItalicFont     = {Fira Sans Italic},
+]
+
+%% ── Beamer Colors ─────────────────────────────────────────────────────────────
+\setbeamercolor{normal text}         {fg=gbFg,           bg=gbBg}
+\setbeamercolor{alerted text}        {fg=gbAccentColor}
+\setbeamercolor{example text}        {fg=gbGreen}
+\setbeamercolor{structure}           {fg=gbAccentColor}
+\setbeamercolor{background canvas}   {bg=gbBg}
+
+\setbeamercolor{title}               {fg=gbAccentColor,  bg=gbBg}
+\setbeamercolor{subtitle}            {fg=gbFg2,          bg=gbBg}
+\setbeamercolor{author}              {fg=gbFg,           bg=gbBg}
+\setbeamercolor{institute}           {fg=gbFg3,          bg=gbBg}
+\setbeamercolor{date}                {fg=gbFg3,          bg=gbBg}
+
+\setbeamercolor{frametitle}          {fg=gbAccentColor,  bg=gbBg1}
+\setbeamercolor{framesubtitle}       {fg=gbFg2,          bg=gbBg1}
+
+\setbeamercolor{block title}         {fg=gbBg,           bg=gbAccentColor}
+\setbeamercolor{block body}          {fg=gbFg,           bg=gbBg1}
+\setbeamercolor{block title alerted} {fg=gbBg,           bg=gbOrange}
+\setbeamercolor{block body alerted}  {fg=gbFg,           bg=gbBg1}
+\setbeamercolor{block title example} {fg=gbBg,           bg=gbPurple}
+\setbeamercolor{block body example}  {fg=gbFg,           bg=gbBg1}
+
+\setbeamercolor{itemize item}        {fg=gbAccentColor}
+\setbeamercolor{itemize subitem}     {fg=gbOrange}
+\setbeamercolor{itemize subsubitem}  {fg=gbAqua}
+\setbeamercolor{enumerate item}      {fg=gbAccentColor}
+\setbeamercolor{enumerate subitem}   {fg=gbOrange}
+\setbeamercolor{enumerate subsubitem}{fg=gbAqua}
+\setbeamercolor{description item}    {fg=gbAccentColor}
+
+\setbeamercolor{footline}            {fg=gbBg4,          bg=gbBg}
+\setbeamercolor{section in toc}      {fg=gbFg}
+\setbeamercolor{subsection in toc}   {fg=gbFg2}
+\setbeamercolor{caption name}        {fg=gbAccentColor}
+
+%% ── Beamer Fonts ──────────────────────────────────────────────────────────────
+%% family=\rmfamily → Roboto Slab; default (\sffamily) → Fira Sans
+\setbeamerfont{title}         {family=\rmfamily, size=\LARGE,     series=\bfseries}
+\setbeamerfont{subtitle}      {family=\rmfamily, size=\large,     series=\mdseries}
+\setbeamerfont{author}        {                  size=\normalsize, series=\mdseries}
+\setbeamerfont{institute}     {                  size=\small,      series=\mdseries}
+\setbeamerfont{date}          {                  size=\small,      series=\mdseries}
+\setbeamerfont{frametitle}    {family=\rmfamily, size=\large,     series=\bfseries}
+\setbeamerfont{framesubtitle} {family=\rmfamily, size=\small,     series=\mdseries}
+\setbeamerfont{block title}   {                  size=\normalsize, series=\bfseries}
+\setbeamerfont{footline}      {                  size=\tiny}
+\setbeamerfont{section in toc}{                  size=\normalsize}
+
+%% ── Templates ─────────────────────────────────────────────────────────────────
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamertemplate{itemize item}     {\raisebox{0.15ex}{\small\textbullet}}
+\setbeamertemplate{itemize subitem}  {\raisebox{0.15ex}{\small\textendash}}
+\setbeamertemplate{itemize subsubitem}{\raisebox{0.15ex}{\scriptsize\textperiodcentered}}
+
+%% ── Title Page ────────────────────────────────────────────────────────────────
+\defbeamertemplate*{title page}{gruvbox}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    %% accent bar at the top
+    \fill[gbAccentColor]
+      (current page.north west) rectangle ([yshift=-3pt] current page.north east);
+  \end{tikzpicture}%
+  \vfill
+  %% title and subtitle
+  \begin{beamercolorbox}[wd=\textwidth, sep=0pt]{title}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+    \ifx\insertsubtitle\@empty\else
+      \vskip0.45em
+      \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+    \fi
+  \end{beamercolorbox}%
+  \vskip0.9em
+  %% thin separator
+  {\color{gbBg3}\rule{0.42\textwidth}{0.4pt}}\par
+  \vskip0.9em
+  %% author, institute, date
+  \begin{beamercolorbox}[wd=\textwidth, sep=0pt]{author}
+    \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par
+    \ifx\insertinstitute\@empty\else
+      \vskip0.25em
+      \usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par
+    \fi
+    \ifx\insertdate\@empty\else
+      \vskip0.25em
+      \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par
+    \fi
+  \end{beamercolorbox}%
+  \vfill
+}
+
+%% ── Frame Title ───────────────────────────────────────────────────────────────
+\defbeamertemplate*{frametitle}{gruvbox}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[%
+      wd=\paperwidth, ht=2.6ex, dp=1.2ex,
+      leftskip=0.7cm, rightskip=0.7cm]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle%
+    \ifx\insertframesubtitle\@empty\else
+      \hspace{0.55em}{\color{gbBg4}|}\hspace{0.4em}%
+      \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}%
+      \insertframesubtitle%
+    \fi
+  \end{beamercolorbox}%
+  \nointerlineskip
+  {\color{gbAccentColor}\rule{\paperwidth}{1pt}}%
+}
+
+%% ── Footline ──────────────────────────────────────────────────────────────────
+\defbeamertemplate*{footline}{gruvbox}{%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=2.4ex, dp=1ex]{footline}%
+    \hspace{0.7cm}%
+    \usebeamerfont{footline}\usebeamercolor[fg]{footline}%
+    \insertshortauthor%
+    \hfill%
+    \insertshorttitle%
+    \hfill%
+    \insertframenumber\,/\,\inserttotalframenumber%
+    \hspace{0.7cm}%
+  \end{beamercolorbox}%
+}
+
+%% empty headline
+\defbeamertemplate*{headline}{gruvbox}{}
