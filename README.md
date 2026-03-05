@@ -10,6 +10,7 @@ Modern [Beamer](https://ctan.org/pkg/beamer) themes for LaTeX presentations buil
 - Customizable accent color — change a single line to restyle the whole presentation
 - Minimal chrome: thin accent bar on the title slide, separator under each frame title, clean footline
 - Three block styles: standard, alert, example
+- Bibliography support via **biblatex** — ready-to-use `bibliography.bib` for citations with `\cite{}`; default style is `verbose`
 
 ## Requirements
 

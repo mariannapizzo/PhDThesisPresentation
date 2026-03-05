@@ -6,6 +6,10 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{tikz}
+\RequirePackage[style=verbose]{biblatex}
+
+%% Smaller font for citations
+\renewcommand{\footnotesize}{\scriptsize}
 
 %% ── Gruvbox Dark Palette ──────────────────────────────────────────────────────
 \definecolor{gbBg}    {HTML}{282828}  % main background
@@ -90,7 +94,8 @@
 \setbeamerfont{framesubtitle} {family=\rmfamily, size=\small,     series=\mdseries}
 \setbeamerfont{block title}   {                  size=\normalsize, series=\bfseries}
 \setbeamerfont{footline}      {                  size=\tiny}
-\setbeamerfont{section in toc}{                  size=\normalsize}
+\setbeamerfont{section in toc}   {                  size=\normalsize}
+\setbeamerfont{subsection in toc}{                  size=\small}
 
 %% ── Templates ─────────────────────────────────────────────────────────────────
 \setbeamertemplate{navigation symbols}{}
@@ -99,6 +104,16 @@
 \setbeamertemplate{itemize item}     {\raisebox{0.15ex}{\small\textbullet}}
 \setbeamertemplate{itemize subitem}  {\raisebox{0.15ex}{\small\textendash}}
 \setbeamertemplate{itemize subsubitem}{\raisebox{0.15ex}{\scriptsize\textperiodcentered}}
+
+\setbeamertemplate{section in toc}{%
+  {\color{gbAccentColor}\raisebox{0.15ex}{\small\textbullet}}\hspace{0.5em}%
+  \usebeamercolor[fg]{section in toc}\inserttocsection\par%
+}
+\setbeamertemplate{subsection in toc}{%
+  \hspace{1.5em}{\color{gbOrange}\raisebox{0.15ex}{\small\textendash}}\hspace{0.5em}%
+  \usebeamercolor[fg]{subsection in toc}%
+  \usebeamerfont{subsection in toc}\inserttocsubsection\par%
+}
 
 %% ── Title Page ────────────────────────────────────────────────────────────────
 \defbeamertemplate*{title page}{gruvbox}{%
