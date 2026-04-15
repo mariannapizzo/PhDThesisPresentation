@@ -93,7 +93,7 @@
 \setbeamerfont{frametitle}    {family=\rmfamily, size=\large,     series=\bfseries}
 \setbeamerfont{framesubtitle} {family=\rmfamily, size=\small,     series=\mdseries}
 \setbeamerfont{block title}   {                  size=\normalsize, series=\bfseries}
-\setbeamerfont{footline}      {                  size=\tiny}
+\setbeamerfont{footline}      {                  size=\scriptsize}
 \setbeamerfont{section in toc}   {                  size=\normalsize}
 \setbeamerfont{subsection in toc}{                  size=\small}
 
@@ -170,14 +170,18 @@
 %% ── Footline ──────────────────────────────────────────────────────────────────
 \defbeamertemplate*{footline}{gruvbox}{%
   \begin{beamercolorbox}[wd=\paperwidth, ht=2.4ex, dp=1ex]{footline}%
-    \hspace{0.7cm}%
-    \usebeamerfont{footline}\usebeamercolor[fg]{footline}%
-    \insertshortauthor%
-    \hfill%
-    \insertshorttitle%
-    \hfill%
-    \insertframenumber\,/\,\inserttotalframenumber%
-    \hspace{0.7cm}%
+    \begin{beamercolorbox}[wd=0.22\paperwidth, ht=2.4ex, dp=1ex, leftskip=0.35cm]{footline}%
+      \usebeamerfont{footline}\usebeamercolor[fg]{footline}%
+      \insertshortauthor%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.56\paperwidth, ht=2.4ex, dp=1ex, center]{footline}%
+      \usebeamerfont{footline}\usebeamercolor[fg]{footline}%
+      \insertshorttitle%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=0.22\paperwidth, ht=2.4ex, dp=1ex, right, rightskip=0.35cm]{footline}%
+      \usebeamerfont{footline}\usebeamercolor[fg]{footline}%
+      \insertframenumber\,/\,\inserttotalframenumber%
+    \end{beamercolorbox}%
   \end{beamercolorbox}%
 }
 
