@@ -41,10 +41,20 @@
 		
 		\textbf{External Reviewers:} Pablo Cesar, Giacinto Barresi
 	\end{center}
+	
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, xshift=-0.4cm, yshift=0.3cm] at (current page.south east) {
+			\includegraphics[height=1cm]{figures/unige.png}
+		};
+	\end{tikzpicture}
+
+	\vspace{0.2cm}
+		
+		\small
+		PhD Program in Computer Science, XXXVIII Cycle
 \end{frame}
 
-
-\begin{frame}{Extended Reality: Definition and Scope}
+\begin{frame}{eXtended Reality: Definition and Scope}
 	\small
 \textbf{XR} encompasses Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR)
 	
@@ -73,8 +83,7 @@
 			\setlength\itemsep{0.0em}
 			\item Training and simulation
 			\item Medical rehabilitation
-			\item Surgical planning
-			\item Education and cognitive training
+			\item Education and vocational training
 		\end{itemize}
 	\end{columns}
 	\vfill
@@ -82,49 +91,34 @@
 \end{frame}
 
 \begin{frame}{The Research Challenge}
-	Extended Reality (XR) systems hold transformative potential, yet real-world deployment reveals three interconnected barriers:
+	Deploying XR with \textbf{real users} introduces challenges that go far beyond rendering high-quality virtual content. 
+	A system must be engaging, accessible, safe, and effective, especially when the target population has specific needs or limitations.
 	
+	\textbf{\textcolor{gbAqua}{Three Critical, Interconnected Challenges}}
 	\vspace{0.5cm}
 	
 	\begin{columns}[t]
 		\column{0.32\textwidth}
 		\textbf{\textcolor{gbAqua}{Safety}}
 		
-		Ensuring spatial coherence between real and virtual environments
+		Obstacle avoidance of real objects in immersive environments
 		
 		\column{0.32\textwidth}
 		\textbf{\textcolor{gbAqua}{User Experience}}
 		
-		Selecting appropriate visualization modalities
+		Selecting the appropriate Visualization Modality for diverse users and goals
 		
 		\column{0.32\textwidth}
 		\textbf{\textcolor{gbAqua}{Engagement}}
 		
-		Designing interactions that are both therapeutic and motivating
+		Ensuring XR interactions are engaging and motivating for the target users
 	\end{columns}
 	
 	\vspace{0.5cm}
 	
-	\alert{These are complementary, not competing requirements}
+	\alert{These challenges directly impact user safety, engagement, and task effectiveness. They represent complementary, not competing requirements.}
 \end{frame}
 
-\begin{frame}{Research Questions}
-	\begin{itemize}
-		\item \textbf{RQ1:} Which photogrammetry software offers best trade-off between accuracy and processing time for non-experts?
-		
-		\vspace{0.3cm}
-		
-		\item \textbf{RQ2:} Do off-the-shelf 3D reconstructions produce functionally sufficient meshes for XR obstacle avoidance and passive haptics?
-		
-		\vspace{0.3cm}
-		
-		\item \textbf{RQ3:}When IVR is not feasible, which non-immersive VM best approximates its benefits in terms of sense of presence, usability, cognitive load, and task performance?
-		
-		\vspace{0.3cm}
-		
-		\item \textbf{RQ4:} Can wearable-controlled exergame achieve engagement and usability for pediatric users?
-	\end{itemize}
-\end{frame}
 
 \begin{frame}{Three Interconnected Contributions}
 	\begin{columns}[t]
@@ -136,7 +130,7 @@
 		
 		\includegraphics[width=0.9\columnwidth]{figures/intro/3d.png}
 		
-		\small Safety through spatial coherence (RQ1, RQ2)
+		\small Safety through spatial coherence 
 		
 		\column{0.33\textwidth}
 		\centering
@@ -146,7 +140,7 @@
 		
 		\includegraphics[width=0.9\columnwidth]{figures/intro/vm.png}
 		
-		\small Task effectiveness in non-immersive XR (RQ3)
+		\small Task effectiveness in non-immersive XR 
 		
 		\column{0.33\textwidth}
 		\centering
@@ -156,7 +150,7 @@
 		
 		\includegraphics[width=0.9\columnwidth]{figures/intro/ap.png}
 		
-		\small Engagement in pediatric rehab (RQ4)
+		\small Engagement in pediatric rehab 
 	\end{columns}
 \end{frame}
 
@@ -171,26 +165,26 @@
 		\item Achieved through high-res visuals, spatialized audio, haptic feedback
 	\end{itemize}
 
-	\vspace{0.19cm}
+	\vspace{0.18cm}
 	\textbf{\textcolor{gbAqua}{Presence}}: subjective psychological state
 	\begin{itemize}
 		\item Felt sense of ``being there'' in a virtual environment
 		\item Three subscales: Spatial Presence, Involvement, Experienced Realism
 	\end{itemize}
 
-	\vspace{0.19cm}
+	\vspace{0.18cm}
 	\textbf{\textcolor{gbAqua}{Usability}}: ease of use and effectiveness of a system
 	\begin{itemize}
 		\item Perceived simplicity, learnability, efficiency, memorability, error frequency, and user satisfaction 
 	\end{itemize}
 
-	\vspace{0.19cm}
+	\vspace{0.18cm}
 	\textbf{\textcolor{gbAqua}{Cognitive Load}}: subjective mental workload
 	\begin{itemize}
 		\item Mental, physical, and temporal demand experienced during a task
 	\end{itemize}
 
-	\vspace{0.19cm}
+	\vspace{0.18cm}
 	\textbf{\textcolor{gbAqua}{Engagement}}: depth of user investment
 	\begin{itemize}
 		\item Cognitive, temporal, affective, and behavioral involvement with a system
@@ -202,20 +196,20 @@
 \begin{frame}{Key Concepts: Questionnaires Used}
 	\textbf{\textcolor{gbAqua}{Presence}} $\rightarrow$ IPQ (IGroup Presence Questionnaire)
 	\begin{itemize}
-		\item 14 items, 7-point Likert scale, three subscales + general item
+		\item 14 items, 7-point Likert-type scale: three subscales + general item
 	\end{itemize}
 
 	\vspace{0.2cm}
 	\textbf{\textcolor{gbAqua}{Usability}} $\rightarrow$ SUS (System Usability Scale)
 	\begin{itemize}
-		\item 10 items, score rescaled 0--100 (68 = average)
+		\item 10 items, 5-point Likert-type scale: score rescaled 1--100 (68 = average)
 		\item SUS for Kids adaptation used for pediatric population
 	\end{itemize}
 
 	\vspace{0.2cm}
 	\textbf{\textcolor{gbAqua}{Cognitive Load}} $\rightarrow$ RTLX (Raw NASA-TLX)
 	\begin{itemize}
-		\item 6 subscales, 100-point rating, unweighted mean
+		\item 6 items rated on a 100-point scale
 	\end{itemize}
 
 	\vspace{0.2cm}
@@ -249,12 +243,12 @@
 \end{frame}
 
 
-\begin{frame}{Passive Haptics: Bridging Real and Virtual}
+\begin{frame}{Passive Haptics}
 	\textbf{\textcolor{gbAqua}{The Challenge}}: Standard VR lacks tactile and haptic feedback
 	
 	\begin{itemize}
 		\item Users cannot naturally sit on chairs, feel physical resistance
-		\item Limits realism and task performance in training
+		\item Limits realism 
 	\end{itemize}
 	
 	\vspace{0.3cm}
@@ -275,31 +269,24 @@
 		\item Enhanced presence and immersion
 		\item More natural, ecologically valid movements
 		\item Improved task performance (accuracy, speed)
-		\item Higher embodiment than active or no-haptics conditions
 	\end{itemize}
 	
 	\citefooter{Lindeman et al., 1999; McAnally \& Wallis, 2022}
-\end{frame}
-\begin{frame}{Safety in XR: Obstacle Avoidance Challenge}
+\end{frame}\begin{frame}{Safety in XR: Obstacle Avoidance Challenge}
 	\begin{columns}[T]
 		\column{0.62\textwidth}
 		\textbf{\textcolor{gbAqua}{The Problem}}
+
+
+		Users are unaware of real obstacles; risk of collision, falls, injury
 		
-		\small
-		\begin{itemize}
-			\setlength\itemsep{0em}
-			\vspace{-0.3cm}
-			\item Users in immersive VR perceptually isolated from physical world
-			\item Unaware of real obstacles; risk of collision, falls, injury
-			\item Particularly critical in medical training (non-dedicated rooms)
-		\end{itemize}
 		\textbf{\textcolor{gbAqua}{Current Solutions}}
 		
 		\small
 		\begin{itemize}
 			\setlength\itemsep{0em}
 			\vspace{-0.3cm}
-			\item Guardian (Meta), Chaperone (Valve): Static perimeter detection
+			\item Guardian (Meta), Chaperone (HTC Vive): Static perimeter detection
 			\item Scene Understanding (Meta Quest 3): Real-time 3D reconstruction
 			\item Limitation: Fixed semantic categories
 		\end{itemize}
@@ -311,7 +298,6 @@
 	\vfill
 	\citefooter{Meta Developer Documentation}
 \end{frame}
-
 
 %% ══════════════════════════════════════════════════════════════════════════════
 %% PART 3: CONTRIBUTION 1 — 3D RECONSTRUCTION (cappellino introduttivo)
@@ -333,7 +319,7 @@
 	
 	\vspace{0.3cm}
 	
-	\textbf{\textcolor{gbAqua}{What such a System would Need}}
+	\textbf{\textcolor{gbAqua}{What such a system would need}}
 	
 	A spatial representation of the real environment: approximate object location, size, and layout.
 	
@@ -343,185 +329,26 @@
 \end{frame}
 
 \begin{frame}{Spatial Coherence: Passive Haptics + 3D Reconstruction Pipeline}
-	\textbf{\textcolor{gbAqua}{Dual Function Approach}}
-	
+
+	\begin{center}
+		\includegraphics[width=\textwidth, height=0.41\textheight, keepaspectratio]{figures/obs.png}
+	\end{center}
+	\textbf{\textcolor{gbAqua}{Dual Function Approach}}	
 	\begin{itemize}
 		\item System that is simultaneously aware of physical layout AND maps virtual objects onto real counterparts
 		\item Provides both safety guarantees and natural haptic feedback within same pipeline
 		\item Reframes physical objects: from obstacles to interaction assets
 	\end{itemize}
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{The XR Pipeline}}
-	
-	Real environment → Reconstruction → Voxelization/Clustering → Game engine
 		
 	\citefooter{Valentini et al., 2020; Wheeler et al., 2024}
 \end{frame}
 
 
-%% --- SLIDE 2: ATTIVO/PASSIVO ---
-\begin{frame}{What Is 3D Reconstruction?}
-	\textbf{\textcolor{gbAqua}{Definition}}
-	
-	Determining the 3D shape of an object from a finite number of measurements: images, sensor data, or a combination of both.
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Two Main Families}}
-	
-	\vspace{0.3cm}
-	
-	\begin{columns}[t]
-		\column{0.48\textwidth}
-		\textbf{Active Methods}
-		\begin{itemize}
-			\item Actively interfere with the scene
-			\item Structured light, laser scanning, depth sensors
-			\item High accuracy
-			\item Expensive, specialized hardware
-		\end{itemize}
-		
-		\column{0.48\textwidth}
-		\textbf{Passive Methods}
-		\begin{itemize}
-			\item Image or video-based
-			\item Photogrammetry
-			\item Accessible, off-the-shelf tools
-			\item May produce imperfect meshes
-		\end{itemize}
-	\end{columns}
-	
-	
-\end{frame}
-%% --- ROADMAP prima di Study 1 ---
-\begin{frame}{Roadmap: Two Complementary Studies}
-	\textbf{\textcolor{gbAqua}{Study 1 — Benchmarking Under Controlled Conditions}}
-	
-	\begin{itemize}
-		\item Systematic comparison of photogrammetry software
-		\item Synthetic dataset with precise ground truth
-		\item Metrics: geometric accuracy, processing time, failure rate, ease of use
-		\item \textit{Which software offers the best trade-off for non-experts?}
-	\end{itemize}
-	
-	\vspace{0.3cm}
-	
-	{\color{gray}
-\setbeamercolor{local structure}{fg=gray}
-\textbf{Study 2 — Functional Evaluation in Real Rooms}
-
-\begin{itemize}
-    \item Six real indoor environments, active and passive techniques
-    \item Evaluation against the requirements of an existing XR pipeline
-    \item Metrics: object detection rate, volume accuracy, artifact generation
-    \item \textit{Are off-the-shelf reconstructions sufficient for obstacle avoidance and passive haptics?}
-\end{itemize}
-}
-	
-	\vspace{0.2cm}
-	
-	\alert{Joint question:} How much geometric imprecision can an XR environment tolerate while remaining safe and usable?
-\end{frame}
-
-
-
-%% ══════════════════════════════════════════════════════════════════════════════
-%% STUDY 1: PHOTOGRAMMETRY BENCHMARKING
-%% ══════════════════════════════════════════════════════════════════════════════
-
-\begin{frame}{Study 1}
-    \textbf{\textcolor{gbAqua}{Experimental Validation of Photogrammetry-based 3D Reconstruction Software}}
-    
-    \vspace{0.5cm}
-    
-    
-        \small\textit{Based on:}
-        
-        \vspace{0.2cm}
-        
-        {\footnotesize R. Hussain, M. Pizzo, et al., ``Experimental Validation of Photogrammetry-based 3D Reconstruction Software,'' IEEE IPAS, 2022}
-   
-\end{frame}
-
-%% --- SLIDE 1 (accorpata): GOAL, DATASET, METRICHE ---
-\begin{frame}{Study 1: Goal, Dataset and Metrics}
-	\textbf{\textcolor{gbAqua}{Goal}}
-	
-	Provide guidelines for \textbf{non-expert users} on which photogrammetry software to use, evaluating accuracy, processing time, failure rate, and ease of use.
-	
-	\vspace{0.2cm}
-	
-	\textbf{\textcolor{gbAqua}{Five Software Packages Tested}} (default parameters, no expert tuning)
-	
-	3DF Zephyr, Metashape, Colmap, Meshroom, Regard3D
-	
-	\vspace{0.3cm}
-	
-	\begin{columns}[t]
-		\column{0.48\textwidth}
-		\textbf{\textcolor{gbAqua}{Dataset: IVL-SYNTHSFMv2}}
-		\small
-		\begin{itemize}
-			\setlength\itemsep{0em}
-			\item Synthetic dataset with known ground truth (.obj)
-			\item 5 objects, 2 lighting conditions (fixed/moving sunlight)
-		\end{itemize}
-		
-		\column{0.48\textwidth}
-		\textbf{\textcolor{gbAqua}{Evaluation Metrics}}
-		\small
-		\begin{itemize}
-			\setlength\itemsep{0em}
-			\item Geometric accuracy: C2C, C2M (CloudCompare)
-			\item Processing time, failure rate, ease of use
-		\end{itemize}
-	\end{columns}
-	
-	
-	\citefooter{Hussain et al., IEEE IPAS, 2022}
-\end{frame}
-
-%% --- SLIDE 2 (accorpata): RISULTATI E FINDINGS ---
-\begin{frame}{Study 1: Results and Findings}
-	\begin{center}
-	\begin{tabular}{l c c c c}
-		\toprule
-		\textbf{Software} & \textbf{C2M (m)} & \textbf{C2C (m)} & \textbf{Time (min)} & \textbf{Cloud Points} \\
-		\midrule
-		3DF Zephyr & 0.0079 (0.0057) & 0.0081 (0.0055) & 2.88  & 16{,}303   \\
-		Colmap     & \textbf{0.0030 (0.0030)} & \textbf{0.0034 (0.0028)} & 68.78 & 1{,}512{,}212 \\
-		Meshroom   & 0.0040 (0.0032) & 0.0044 (0.0031) & 25.55 & 275{,}753  \\
-		Metashape  & 0.0302 (0.0245) & 0.0302 (0.0244) & \textbf{1.31}  & 14{,}909   \\
-		Regard3D   & 0.0067 (0.0078) & 0.0069 (0.0076) & 2.16  & 249{,}503  \\
-		\bottomrule
-	\end{tabular}
-	\end{center}
-	
-	\vspace{0.15cm}
-	\small Object: \textit{empirevase}, fixed lighting (fs). Mean distances in meters (std in brackets).
-	
-	\vspace{0.4cm}
-	
-	\textbf{\textcolor{gbAqua}{RQ1 Answer}}
-	
-	\vspace{0.15cm}
-	
-	\alert{3DF Zephyr} offers the best accuracy/time trade-off, with low failure rate: recommended for non-expert users reconstructing large sets of objects.
-	
-	\vspace{0.15cm}
-	
-	\alert{Colmap} achieves the lowest error but is by far the slowest (nearly 70 min per object) $\rightarrow$ \textbf{excluded from Study 2} due to processing time.
-	
-	\citefooter{Hussain et al., IEEE IPAS, 2022}
-\end{frame}
-
 %% ══════════════════════════════════════════════════════════════════════════════
 %% STUDY 2: FUNCTIONAL EVALUATION IN REAL ROOMS
 %% ══════════════════════════════════════════════════════════════════════════════
 
-\begin{frame}{Study 2}
+\begin{frame}{Study 1}
     \textbf{\textcolor{gbAqua}{Evaluation of 3D Reconstruction Techniques for the Blending of Real and Virtual Environments}}
     
     \vspace{0.5cm}
@@ -534,40 +361,8 @@
 \end{frame}
 
 
-%% --- ROADMAP prima di Study 2 ---
-\begin{frame}{Roadmap: Two Complementary Studies}
-	\setbeamercolor{local structure}{fg=gray}
-	{\color{gray}
-	\textbf{Study 1 — Benchmarking Under Controlled Conditions}
-	
-	\begin{itemize}
-		\item Systematic comparison of photogrammetry software
-		\item Synthetic dataset with precise ground truth
-		\item Metrics: geometric accuracy, processing time, failure rate, ease of use
-		\item \textit{Which software offers the best trade-off for non-experts?}
-	\end{itemize}
-	}
-	\setbeamercolor{local structure}{fg=gbAqua}
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Study 2 — Functional Evaluation in Real Rooms}}
-	
-	\begin{itemize}
-		\item Six real indoor environments, active and passive techniques
-		\item Evaluation against the requirements of an existing XR pipeline
-		\item Metrics: object detection rate, volume accuracy, artifact generation
-		\item \textit{Are off-the-shelf reconstructions sufficient for obstacle avoidance and passive haptics?}
-	\end{itemize}
-	
-	\vspace{0.2cm}
-	
-	\alert{Joint question:} How much geometric imprecision can an XR environment tolerate while remaining safe and usable?
-\end{frame}
-
-
 %% --- SLIDE 1A: GOAL ---
-\begin{frame}{Study 2: Goal}
+\begin{frame}{Study 1: Goal}
 	\textbf{\textcolor{gbAqua}{From Benchmark to Real World Application}}
 
 	Building on Study 1, this study moves to a real world scenario: creating XR environments where virtual objects are spatially registered onto real ones for \textbf{obstacle avoidance} and \textbf{passive haptics}.
@@ -578,8 +373,9 @@
 
 	\vspace{0.15cm}
 
-	Can off-the-shelf 3D reconstruction techniques produce meshes \textit{sufficient} as input for an XR pipeline?
-
+	Do off-the-shelf 3D reconstruction techniques produce meshes that
+are functionally sufficient as input for an XR pipeline designed for obstacle
+avoidance and passive haptic interaction in real indoor environments?
 	\vspace{0.3cm}
 
 	\alert{Required precision is not fixed}: coarse alignment suffices for safe navigation and passive haptic interaction, whereas fine grained manipulation would demand higher accuracy.
@@ -590,7 +386,7 @@
 
 
 %% --- SLIDE 2: METHODOLOGY ---
-\begin{frame}{Study 2: Methodology}
+\begin{frame}{Study 1: Methodology}
 	\begin{columns}[t]
 		\column{0.48\textwidth}
 		\textbf{\textcolor{gbAqua}{Six Real Indoor Rooms}}: Aquarium (meeting room), Copy room, Kitchen, Our Lab, PhD students' room, Professors' common room
@@ -601,14 +397,6 @@
 			\item Daily use objects: bottle, sanitizer, coffee cup, notebook
 			\item Trackers, controllers (for alignment)
 			\item Chairs left in place (safety critical)
-		\end{itemize}
-
-		\vspace{0.15cm}
-
-		\textbf{\textcolor{gbAqua}{Input Data}}
-		\begin{itemize}
-			\item 100 photos or video frames per room
-			\item Redmi Note 8T smartphone
 		\end{itemize}
 
 		\column{0.48\textwidth}
@@ -627,6 +415,12 @@
 			\item Meshroom
 			\item Regard3D
 		\end{itemize}
+		
+		\textbf{\textcolor{gbAqua}{Input Data}}
+		\begin{itemize}
+			\item 100 photos or video frames per room
+			\item Redmi Note 8T smartphone
+		\end{itemize}
 
 		
 	\end{columns}
@@ -635,7 +429,7 @@
 \end{frame}
 
 %% --- SLIDE 1B: XR PIPELINE ---
-\begin{frame}{Study 2: The XR Pipeline}
+\begin{frame}{Study 1: The XR Pipeline}
 	\begin{center}
 		\includegraphics[width=\textwidth, height=0.78\textheight, keepaspectratio]{figures/PaperOrlando/pipeline3.png}
 	\end{center}
@@ -645,38 +439,11 @@
 	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
-%% --- SLIDE: CHAIR VOLUME SHIFT ---
-\begin{frame}{Study 2 Results: Chair Volume Accuracy}
-	\begin{center}
-		\includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{figures/PaperOrlando/heatmapChairs.png}
-	\end{center}
-
-	{\tiny Volume percentage shift of reconstructed chairs vs.\ ground truth. Positive values indicate overestimation (safety critical: user may attempt to sit where no surface exists). ReCap Photo is the most faithful; Skanect and 3DF Zephyr tend to overestimate significantly.}
-
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
-\end{frame}
 
 %% --- SLIDE 3: METRICS ---
-\begin{frame}{Study 2: Evaluation Metrics}
-	\textbf{\textcolor{gbAqua}{No geometric ground truth}}: quality assessed against XR pipeline functional requirements.
-
-	\vspace{0.3cm}
-
+\begin{frame}{Study 1: Evaluation Metrics}
+	
 	\begin{columns}[t]
-		\column{0.48\textwidth}
-		\textbf{Reconstruction Success Rate (RSR)}
-
-		Fraction of object instances correctly reconstructed across the 6 rooms:
-		\[
-			RSR_{A,s} = \frac{\sum_{j=1}^{6} NSR_{A,j}}{\sum_{j=1}^{6} IR_{A,j}} \times 100\%
-		\]
-
-		\vspace{0.2cm}
-
-		\textbf{Artifact Volume Percentage (AVP)}
-
-		Volume of spurious clusters relative to ground truth room volume.
-
 		\column{0.48\textwidth}
 		\textbf{Average Percentage Shift (APS)}
 
@@ -685,18 +452,32 @@
 			APS_j = \frac{1}{N_j} \sum_{i=1}^{N_j} \left| \frac{V_{rec} - V_{gt}}{V_{gt}} \right| \times 100\%
 		\]
 
+		{\footnotesize where $i$ is the object index, $j$ is the room index, and $N_j$ is the number of objects in room $j$.}
+
 		\vspace{0.2cm}
 
 		\textbf{Chair Volume Shift} (separate)
 
 		Safety critical: overestimation may lead user to sit where no physical surface exists.
+
+		
+		\column{0.48\textwidth}
+		\textbf{Reconstruction Success Rate (RSR)}
+
+		Fraction of object instances correctly reconstructed across the 6 rooms. For a specific object $A$ and software $s$:
+		\[
+			RSR_{A,s} = \frac{\sum_{j=1}^{6} NSR_{A,j}}{\sum_{j=1}^{6} IR_{A,j}} \times 100\%
+		\]
+
+		\vspace{0.2cm}
+
 	\end{columns}
 
 	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
 %% --- SLIDE 4: ROOMS & RECONSTRUCTIONS ---
-\begin{frame}{Study 2: Six Rooms and Their Reconstructions}
+\begin{frame}{Study 1: Six Rooms and Their Reconstructions}
 	\begin{center}
 		\includegraphics[width=\textwidth, height=0.78\textheight, keepaspectratio]{figures/PaperOrlando/grid.png}
 	\end{center}
@@ -706,19 +487,10 @@
 	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
-%% --- SLIDE 5: RSR ---
-\begin{frame}{Study 2 Results: Reconstruction Success Rate}
-	\begin{center}
-		\includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{figures/PaperOrlando/tableResults.png}
-	\end{center}
 
-	{\tiny Protruding objects (bottle, sanitizer) easier to reconstruct than flat ones (notebook). Photos consistently outperform video frames. \alert{ReCap Photo and Kinect} are the only methods that always reconstruct chairs.}
-
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
-\end{frame}
 
 %% --- SLIDE 6: APS ---
-\begin{frame}{Study 2 Results: Volume Accuracy}
+\begin{frame}{Study 1 Results: Volume Accuracy}
 	\begin{center}
 		\includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{figures/PaperOrlando/heatmap.png}
 	\end{center}
@@ -728,8 +500,30 @@
 	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
+%% --- SLIDE: CHAIR VOLUME SHIFT ---
+\begin{frame}{Study 1 Results: Chair Volume Accuracy}
+	\begin{center}
+		\includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{figures/PaperOrlando/heatmapChairs.png}
+	\end{center}
+
+	{\tiny Volume percentage shift of reconstructed chairs vs.\ ground truth. Positive values indicate overestimation (safety critical: user may attempt to sit where no surface exists). ReCap Photo is the most faithful; Skanect and 3DF Zephyr tend to overestimate significantly.}
+
+	\citefooter{Pizzo et al., IEEE VRW, 2024}
+\end{frame}
+
+%% --- SLIDE 5: RSR ---
+\begin{frame}{Study 1 Results: Reconstruction Success Rate}
+	\begin{center}
+		\includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{figures/PaperOrlando/tableResults.png}
+	\end{center}
+
+	{\tiny Protruding objects (bottle, sanitizer) easier to reconstruct than flat ones (notebook). Photos consistently outperform video frames. \alert{ReCap Photo and Kinect} are the only methods that always reconstruct chairs.}
+
+	\citefooter{Pizzo et al., IEEE VRW, 2024}
+\end{frame}
+
 %% --- SLIDE 7: FINDINGS ---
-\begin{frame}{Study 2: Findings}
+\begin{frame}{Study 1: Findings}
 	\begin{columns}[t]
 		\column{0.48\textwidth}
 		\textbf{\textcolor{gbAqua}{Per Technique Summary}}
@@ -741,7 +535,7 @@
 		\end{itemize}
 
 		\column{0.48\textwidth}
-		\textbf{\textcolor{gbAqua}{RQ2 Answer}}
+		\textbf{\textcolor{gbAqua}{RQ Answer}}
 
 		\vspace{0.1cm}
 
@@ -753,9 +547,6 @@
 
 		\vspace{0.25cm}
 
-		\textbf{\textcolor{gbAqua}{Key Insight}}
-
-		Functional suitability $\neq$ geometric accuracy. A coarser reconstruction can be adequate for safe XR navigation and passive haptic interaction.
 	\end{columns}
 
 	\citefooter{Pizzo et al., IEEE VRW, 2024}
@@ -795,7 +586,7 @@
 	
 	\vspace{0.3cm}
 	
-	\textbf{\textcolor{gbAqua}{Clinical Evidence}}
+	\textbf{\textcolor{gbAqua}{Empirical Evidence}}
 	
 	Wenk et al. (2019-2023) systematically compared IVR, AR and non-immersive setups in reaching tasks with concurrent cognitive load (cognitive-motor dual task). They found:
 	
@@ -855,19 +646,19 @@
 	\vspace{0.3cm}
 	\textbf{\textcolor{gbAqua}{The Dilemma}}
 
-	\textbf{Clinicians asked us to downgrade to 2D}: this eliminates distortion but loses 3D depth benefits\\
-	\textbf{Fundamental question}: When IVR unavailable, which modality is best?
+
+	When IVR unavailable, which modality is best?
 
 \end{frame}
 
 
 \begin{frame}{Study 3: Comparing Four Visualization Modalities}
-	\textbf{\textcolor{gbAqua}{Research Question (RQ3)}}
+	\textbf{\textcolor{gbAqua}{Research Question}}
 	
 	When IVR is not feasible, which non-immersive VM best approximates its benefits in terms of sense of presence, usability, cognitive load, and task performance?
 	
 	\vspace{0.3cm}
-	\includegraphics[width=0.8\columnwidth]{figures/intro/vm.png}
+	\includegraphics[width=0.7\columnwidth]{figures/intro/vm.png}
 
 	
 	\citefooter{Pizzo et al., ``Immersive versus Non-Immersive Virtual Reality in Cognitive-Motor Dual-Task,'' VISIGRAPP, 2025}
@@ -878,10 +669,10 @@
 	\textbf{\textcolor{gbAqua}{Three Hypotheses we tested}}
 	
 	\begin{itemize}
-		\item \textbf{H1}: POV (tracked perspective) is the best approximation of VR in term of sense of presence, usability and cognitive load;
-		\item \textbf{H2}: PERSP (fixed perspective) and ORTHO (orthographic) provide comparable sense of presence, usability, and cognitive load;
-		\item \textbf{H3}: IVR outperforms all non-immersive alternatives showing higher sense of presence, better usability, and lower cognitive load (control hypothesis)
-	\end{itemize}
+		\item \textbf{H1}: IVR outperforms all non-immersive alternatives showing higher sense of presence, better usability, and lower cognitive load (control hypothesis)	
+		\item \textbf{H2}: POV (tracked perspective) is the best approximation of VR in term of sense of presence, usability and cognitive load;
+		\item \textbf{H3}: PERSP (fixed perspective) and ORTHO (orthographic) provide comparable sense of presence, usability, and cognitive load;
+		\end{itemize}
 \end{frame}
 
 \begin{frame}{Study 3 Methodology: Four Visualization Modalities}
@@ -907,8 +698,6 @@
 			\item \textbf{ORTHO}: Orthographic camera, viewport sized to keep all shelves in field of view, fixed position
 		\end{itemize}
 	\end{columns}
-	
-	\citefooter{Pizzo et al., 2025}
 \end{frame}
 
 \begin{frame}{Study 3 Methodology: Video Demonstration}
@@ -931,7 +720,7 @@
 		\begin{itemize}
 			\item Simultaneous motor + cognitive task: counting cats and touching only pink flowers
 			\item 24 healthy subjects (8F, 16M), within-subject design
-			\item 1 to 4 items displayed per trial (5s each)
+			\item 1 to 4 items displayed per trial, 28 trials
 			\item IVR, then POV/PERSP/ORTHO in randomized order
 			\item Tier list ranking collected at the end
 		\end{itemize}
@@ -973,10 +762,11 @@
 \begin{frame}{Study 3 Results: Usability}
 	\begin{columns}[c]
 		\column{0.3\textwidth}
-		\textbf{\textcolor{gbAqua}{Key Findings}}
+		\textbf{\textcolor{gbAqua}{From the literature}}
 		\begin{itemize}
 			\item AVG SUS score: 68
 			\item SUS $<$ 51 indicates serious usability issues
+			\item SUS $>$ 80.3 indicates excellent usability
 		\end{itemize}
 		
 		\column{0.7\textwidth}
@@ -987,13 +777,34 @@
 \end{frame}
 
 \begin{frame}{Study 3 Results: Cognitive Load}
-    \centering
-    \includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{figures/VisualizationMod/Questionari/NASA.png}
-    \citefooter{Pizzo et al., 2025}
+	\begin{columns}[c]
+		\column{0.3\textwidth}
+		\begin{itemize}			
+			\item VR vs.\ POV: statistically significant differences in physical demand, performance, and frustration sub-scales
+			\item Significant also in overall NASA-TLX score
+		\end{itemize}
+		
+		\column{0.7\textwidth}
+		\includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{figures/VisualizationMod/Questionari/NASA.png}
+	\end{columns}
+	
+	\citefooter{Pizzo et al., 2025}
 \end{frame}
 
 \begin{frame}{Study 3 Results: CMDT Performance}
-	\includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{figures/VisualizationMod/ErroriPercentuali.png}
+	\begin{columns}[c]
+		\column{0.3\textwidth}
+		\textbf{\textcolor{gbAqua}{Key Findings}}
+		\begin{itemize}
+			\item \textbf{Miscounted cats} (pink): can be positive or negative; 
+			\item \textbf{Untouched flowers} (green): inherently negative, reflects missed targets
+			\item \textbf{Wrongly touched objects} (blue): always positive, incorrect touches relative to total displayed
+		\end{itemize}
+		
+		\column{0.7\textwidth}
+		\includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{figures/VisualizationMod/ErroriPercentuali.png}
+	\end{columns}
+	
 	\citefooter{Pizzo et al., 2025}
 \end{frame}
 
@@ -1008,12 +819,12 @@
 		\end{itemize}
 		
 		\column{0.5\textwidth}
-		\textbf{\textcolor{gbAqua}{Clinical Implications}}
+		\textbf{\textcolor{gbAqua}{Implications}}
 		
 		When IVR is not feasible:
 		\begin{enumerate}
-			\item \textbf{First choice}: Fixed Perspective. Consistently preferred, maintains 3D benefits.
-			\item \textbf{Alternative}: Fixed Orthographic. Statistically comparable, viable when clinical requirements favor it.
+			\item \textbf{First choice}: Fixed Perspective (PERSP). Consistently preferred, maintains 3D benefits.
+			\item \textbf{Alternative}: Fixed Orthographic (ORTHO). Statistically comparable, viable when clinical requirements favor it.
 		\end{enumerate}		
 		
 			\end{columns}
@@ -1030,7 +841,7 @@
 		\item \textbf{Ecological POV}: Reimplement using an asymmetric frustum with focal plane aligned to the real screen, so that virtual object projections behave consistently with real-world perception
 		\item \textbf{Arm trajectories}: Study differences across modalities in users' reaching movements. Visualization may influence motor execution
 		\item \textbf{Embodiment}: Evaluate the sense of body ownership across the four conditions
-		\item Considering a more challenging cognitive task
+		\item Considering a more challenging CMDT
 	\end{itemize}
 	
 	\citefooter{Pizzo et al., 2025}
@@ -1075,7 +886,7 @@
 \end{frame}
 
 \begin{frame}{Exergames for Motor Learning}
-	\textbf{\textcolor{gbAqua}{Key Motor Learning Principles Embedded in Exergames}}
+	\textbf{\textcolor{gbAqua}{Exergames and Motor Learning}}
 	
 	\begin{itemize}
 		\item Repetition of goal oriented tasks
@@ -1091,7 +902,7 @@
 	
 	\textbf{\textcolor{gbAqua}{Clinical Evidence}}
 	
-	A systematic review and meta-analysis on VR assisted exergaming in children with cerebral palsy, \alert{45 studies, over 1500 participants}, confirmed significant improvements in global motor function and activities of daily living, and rated the technology as safe and well accepted
+	A systematic review and meta-analysis on XR assisted exergaming in children with cerebral palsy, \alert{45 studies, over 1500 participants}, confirmed significant improvements in global motor function and activities of daily living, and rated the technology as safe and well accepted
 	
 	\citefooter{Birckhead et al., 2019; Levac et al., 2019; Nossa et al., 2021; Tobaiqi et al., 2023}
 \end{frame}
@@ -1276,14 +1087,6 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{ActivePaws in Action}
-	\begin{center}
-		\vfill
-		\textit{Placeholder: video demonstration of control panel, calibration, and tutorial}
-		\vfill
-	\end{center}
-\end{frame}
-
 \begin{frame}{ActivePaws: The Exergames}
 	\begin{columns}[T]
 		\column{0.32\textwidth}
@@ -1345,10 +1148,12 @@
 	\end{columns}
 \end{frame}
 \begin{frame}{ActivePaws in Action}
+	
 	\begin{center}
-		\vfill
-		\textit{Placeholder: video demonstration games}
-		\vfill
+		\includegraphics[width=0.85\linewidth, height=0.55\textheight, keepaspectratio]{figures/intro/ap.png}\\[0.3cm]
+		\href{https://drive.google.com/file/d/1a-kOVCpLSqV-s8Yc_942pxdX89hdeTBS/view?usp=sharing}{%
+			\textcolor{gbAqua}{\textbf{$\blacktriangleright$ Video}}%
+		}
 	\end{center}	
 \end{frame}
 
@@ -1456,7 +1261,7 @@
 	\textbf{\textcolor{gbAqua}{Sledding Adventures}} (accuracy = collected snowman parts + coins / total)
 	
 	\begin{itemize}
-		\item \textbf{L3 only}: $0.77 \pm 0.e13$
+		\item \textbf{L3 only}: $0.77 \pm 0.13$
 	\end{itemize}
 	\textit{Obs.}: consistent results across ages
 	
@@ -1468,10 +1273,9 @@
 	\textbf{\textcolor{gbAqua}{Key Takeaways}}
 	
 	\begin{itemize}
-		\item Sledding Adventures was preferred over Swift Rescuer due to its game mechanics 
-		\item Good usability, with room for clearer instructional support
+		\item Sledding Adventures was preferred over Swift Rescuer due to its game mechanics		
+		\item Accuracy drop in Swift Rescuer across levels attributed to fixed gesture thresholds
 		\item Wristband-based control proved effective across exergames
-		\item Accuracy drop in Swift Rescuer across levels attributed to lack of practice and fixed gesture thresholds
 	\end{itemize}
 	
 	\vspace{0.3cm}
@@ -1479,11 +1283,10 @@
 	\textbf{\textcolor{gbAqua}{Impact on Suite Design}}
 	
 	\begin{itemize}
-		\item Motivated development of \textbf{Galaxy Drift} as a third exergame
-		\item Tuned Swift Rescuer levels and introduced a dedicated \textbf{Level 4} for the ordered modality
+		\item Motivated development of \textbf{Galaxy Drift} as a third exergame		
 		\item Enabled \textbf{configurable gesture intensity thresholds} introduced calibration scene
-		\item Introduced \textbf{alternative gestures} and \textbf{adaptive features} improved accessibility
-		\item \textbf{Revised tutorials} with narration and live demonstrations
+		\item Introduced \textbf{adaptive features} for improved accessibility
+		\item Tuned Swift Rescuer levels and introduced a dedicated \textbf{Level 4} for the ordered modality
 	\end{itemize}
 	
 	
@@ -1502,7 +1305,7 @@
 	\textbf{\textcolor{gbAqua}{How}}
 	
 	\begin{itemize}
-		\item 12 healthy children (4-13 y), within-subject design, two sessions on separate movement configurations (counterbalanced order)
+		\item 12 healthy children (4-12 y), within-subject design, two sessions on separate movement configurations (counterbalanced order)
 		\item All three exergames tested (SR, SA, GD); calibration and tutorial before each game
 		\item Usability, acceptability and engagement questionnaires (UAS + UES-SF) after each session
 		\item Game logs (scores, recognized wristband actions) and motion capture to relate intended vs.\ recognized movements
