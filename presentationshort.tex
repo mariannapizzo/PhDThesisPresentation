@@ -116,7 +116,7 @@
 	
 	\vspace{0.5cm}
 	
-	\alert{These challenges directly impact user safety, engagement, and task effectiveness. They represent complementary, not competing requirements.}
+	\alert{Their relative weight depends on the deployment context.}
 \end{frame}
 
 
@@ -248,7 +248,7 @@
 	
 	\begin{itemize}
 		\item Users cannot naturally sit on chairs, feel physical resistance
-		\item Limits realism 
+		\item Limits experienced realism 
 	\end{itemize}
 	
 	\vspace{0.3cm}
@@ -305,43 +305,19 @@
 
 
 %% --- SLIDE 1: MOTIVAZIONE ---
-\begin{frame}{An Unexplored XR Application}
-	
-	One of the most compelling uses of XR lies in combining physical and virtual environments: for example, for simulation and training.
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{An example scenario}}
-	
-	A generic office is transformed into a virtual industrial plant for safety training. 
-	Physical furniture becomes the scaffolding for the virtual layer: users sit on real chairs, lean on real tables, while perceiving them as part of the virtual environment. 
-	This unlocks \textbf{passive haptics}: realistic tactile feedback with no additional hardware.
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{What such a system would need}}
-	
-	A spatial representation of the real environment: approximate object location, size, and layout.
-	
-	\vspace{0.2cm}
-	
-	\alert{Geometric perfection is not required}: coarse spatial alignment between physical and virtual layers is sufficient.
-\end{frame}
-
 \begin{frame}{Spatial Coherence: Passive Haptics + 3D Reconstruction Pipeline}
-
-	\begin{center}
-		\includegraphics[width=\textwidth, height=0.41\textheight, keepaspectratio]{figures/obs.png}
-	\end{center}
 	\textbf{\textcolor{gbAqua}{Dual Function Approach}}	
+	One of the most compelling uses of XR lies in combining physical and virtual environments: for example, for simulation and training.
 	\begin{itemize}
 		\item System that is simultaneously aware of physical layout AND maps virtual objects onto real counterparts
 		\item Provides both safety guarantees and natural haptic feedback within same pipeline
-		\item Reframes physical objects: from obstacles to interaction assets
-	\end{itemize}
-		
-	\citefooter{Valentini et al., 2020; Wheeler et al., 2024}
+	\end{itemize}	
+	
+	\begin{center}
+		\includegraphics[width=\textwidth, height=0.41\textheight, keepaspectratio]{figures/obs.png}
+	\end{center}
 \end{frame}
+
 
 
 %% ══════════════════════════════════════════════════════════════════════════════
@@ -363,23 +339,19 @@
 
 %% --- SLIDE 1A: GOAL ---
 \begin{frame}{Study 1: Goal}
-	\textbf{\textcolor{gbAqua}{From Benchmark to Real World Application}}
-
-	Building on Study 1, this study moves to a real world scenario: creating XR environments where virtual objects are spatially registered onto real ones for \textbf{obstacle avoidance} and \textbf{passive haptics}.
-
-	\vspace{0.4cm}
 
 	\textbf{\textcolor{gbAqua}{Research Question}}
 
 	\vspace{0.15cm}
 
-	Do off-the-shelf 3D reconstruction techniques produce meshes that
-are functionally sufficient as input for an XR pipeline designed for obstacle
-avoidance and passive haptic interaction in real indoor environments?
-	\vspace{0.3cm}
+	Do \textbf{off-the-shelf} 3D reconstruction techniques produce meshes that
+are functionally sufficient as input for an XR pipeline?
+	\vspace{1cm}
 
-	\alert{Required precision is not fixed}: coarse alignment suffices for safe navigation and passive haptic interaction, whereas fine grained manipulation would demand higher accuracy.
 
+	\alert{Geometric perfection is not required}: coarse spatial alignment between physical and virtual layers is sufficient, whereas fine grained manipulation would demand higher accuracy.
+	
+	
 	\citefooter{Pizzo et al., ``Evaluation of 3D Reconstruction Techniques for XR,'' IEEE VRW, 2024}
 \end{frame}
 
@@ -388,17 +360,6 @@ avoidance and passive haptic interaction in real indoor environments?
 %% --- SLIDE 2: METHODOLOGY ---
 \begin{frame}{Study 1: Methodology}
 	\begin{columns}[t]
-		\column{0.48\textwidth}
-		\textbf{\textcolor{gbAqua}{Six Real Indoor Rooms}}: Aquarium (meeting room), Copy room, Kitchen, Our Lab, PhD students' room, Professors' common room
-		\vspace{0.15cm}
-
-		\textbf{\textcolor{gbAqua}{Objects per Room}}
-		\begin{itemize}
-			\item Daily use objects: bottle, sanitizer, coffee cup, notebook
-			\item Trackers, controllers (for alignment)
-			\item Chairs left in place (safety critical)
-		\end{itemize}
-
 		\column{0.48\textwidth}
 		\textbf{\textcolor{gbAqua}{Reconstruction Techniques}}
 
@@ -415,14 +376,23 @@ avoidance and passive haptic interaction in real indoor environments?
 			\item Meshroom
 			\item Regard3D
 		\end{itemize}
+
 		
+		\column{0.48\textwidth}
 		\textbf{\textcolor{gbAqua}{Input Data}}
 		\begin{itemize}
 			\item 100 photos or video frames per room
 			\item Redmi Note 8T smartphone
 		\end{itemize}
+		\vspace{0.15cm}
+		\textbf{\textcolor{gbAqua}{Six Real Indoor Rooms}}: Aquarium (meeting room), Copy room, Kitchen, Our Lab, PhD students' room, Professors' common room
+		\vspace{0.15cm}
 
-		
+		\textbf{\textcolor{gbAqua}{Objects per Room}}
+		\begin{itemize}
+			\item Chairs left in place (safety critical)
+			\item Trackers, controllers (for alignment)
+		\end{itemize}		
 	\end{columns}
 
 	\citefooter{Pizzo et al., IEEE VRW, 2024}
@@ -433,10 +403,6 @@ avoidance and passive haptic interaction in real indoor environments?
 	\begin{center}
 		\includegraphics[width=\textwidth, height=0.78\textheight, keepaspectratio]{figures/PaperOrlando/pipeline3.png}
 	\end{center}
-
-	{\tiny XR system pipeline: 3D mesh → alignment → voxelization → clustering into bounding boxes → VR object substitution.}
-
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
 
@@ -454,26 +420,14 @@ avoidance and passive haptic interaction in real indoor environments?
 
 		{\footnotesize where $i$ is the object index, $j$ is the room index, and $N_j$ is the number of objects in room $j$.}
 
-		\vspace{0.2cm}
-
-		\textbf{Chair Volume Shift} (separate)
-
-		Safety critical: overestimation may lead user to sit where no physical surface exists.
-
 		
 		\column{0.48\textwidth}
-		\textbf{Reconstruction Success Rate (RSR)}
+		\textbf{Chair Volume Shift} (separate)
 
-		Fraction of object instances correctly reconstructed across the 6 rooms. For a specific object $A$ and software $s$:
-		\[
-			RSR_{A,s} = \frac{\sum_{j=1}^{6} NSR_{A,j}}{\sum_{j=1}^{6} IR_{A,j}} \times 100\%
-		\]
-
+		Safety critical: overestimation may lead user to sit where no physical surface exists
 		\vspace{0.2cm}
 
 	\end{columns}
-
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
 %% --- SLIDE 4: ROOMS & RECONSTRUCTIONS ---
@@ -483,8 +437,6 @@ avoidance and passive haptic interaction in real indoor environments?
 	\end{center}
 
 	{\tiny Real rooms (col. 1), reconstructions with each technique, and XR pipeline clusters using ReCap Photo (last col.). Empty cells indicate reconstruction failure.}
-
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
 
@@ -497,7 +449,7 @@ avoidance and passive haptic interaction in real indoor environments?
 
 	{\tiny Some rooms (kitchen, aquarium) show high volume mismatch regardless of software, due to voxelization filling empty space. ReCap Photo with photos and Metashape achieve the lowest shift; video frames flatten performance across all software.}
 
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
+	
 \end{frame}
 
 %% --- SLIDE: CHAIR VOLUME SHIFT ---
@@ -508,28 +460,17 @@ avoidance and passive haptic interaction in real indoor environments?
 
 	{\tiny Volume percentage shift of reconstructed chairs vs.\ ground truth. Positive values indicate overestimation (safety critical: user may attempt to sit where no surface exists). ReCap Photo is the most faithful; Skanect and 3DF Zephyr tend to overestimate significantly.}
 
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
-\end{frame}
-
-%% --- SLIDE 5: RSR ---
-\begin{frame}{Study 1 Results: Reconstruction Success Rate}
-	\begin{center}
-		\includegraphics[width=\textwidth, height=0.72\textheight, keepaspectratio]{figures/PaperOrlando/tableResults.png}
-	\end{center}
-
-	{\tiny Protruding objects (bottle, sanitizer) easier to reconstruct than flat ones (notebook). Photos consistently outperform video frames. \alert{ReCap Photo and Kinect} are the only methods that always reconstruct chairs.}
-
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
+	
 \end{frame}
 
 %% --- SLIDE 7: FINDINGS ---
-\begin{frame}{Study 1: Findings}
+\begin{frame}{Study 1: Conclusions}
 	\begin{columns}[t]
 		\column{0.48\textwidth}
 		\textbf{\textcolor{gbAqua}{Per Technique Summary}}
 		\begin{itemize}
-			\item \textbf{ReCap Photo}: best RSR, faithful chair volumes, robust to image quality degradation
-			\item \textbf{Kinect v1}: good RSR, fast acquisition ($<$3 min), struggles with small and flat objects
+			\item \textbf{ReCap Photo}: faithful chair volumes, robust to image quality degradation
+			\item \textbf{Kinect v1}: overestimation of chair volumes, fast acquisition ($<$3 min), struggles with small and flat objects
 			\item \textbf{Metashape}: low APS with photos, but fails with video frames
 			\item \textbf{3DF Zephyr, Meshroom, Regard3D}: higher failure rates or artifact generation
 		\end{itemize}
@@ -543,13 +484,14 @@ avoidance and passive haptic interaction in real indoor environments?
 
 		\vspace{0.15cm}
 
-		\alert{Autodesk ReCap Photo} (photos or video) and \alert{Kinect v1} produce reconstructions adequate for obstacle avoidance and passive haptics.
+		\alert{Autodesk ReCap Photo} (photos or video) and \alert{Kinect v1} produce reconstructions adequate for obstacle avoidance. For enhanced interaction with passive haptics Autodesk ReCap Photo is recommended.
 
 		\vspace{0.25cm}
+		\textbf{\textcolor{gbAqua}{Future Work}}
+
+		Testing this XR pipeline with Quest 3 Scene Understanding focusing on VE generation and interaction.
 
 	\end{columns}
-
-	\citefooter{Pizzo et al., IEEE VRW, 2024}
 \end{frame}
 
 
@@ -575,33 +517,8 @@ avoidance and passive haptic interaction in real indoor environments?
 	\vfill
 \end{frame}
 
-\begin{frame}{SOTA: Visualization Modalities in XR}
-	\textbf{\textcolor{gbAqua}{Three Categories by Immersion Level}}
-	
-	\begin{itemize}
-		\item \textbf{Non-immersive}: Screens that don't occlude FOV
-		\item \textbf{Semi-immersive}: CAVE or multi-monitor (partial occlusion)
-		\item \textbf{Immersive}: HMD-based (full FOV occlusion)
-	\end{itemize}
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Empirical Evidence}}
-	
-	Wenk et al. (2019-2023) systematically compared IVR, AR and non-immersive setups in reaching tasks with concurrent cognitive load (cognitive-motor dual task). They found:
-	
-	\begin{itemize}
-		\item IVR improved motor performance and reduced cognitive load screen condition (nIVR)
-		\item IVR rated more motivating and usable wrt AR and nIVR 
-		\item IVR achieved higher embodiment than 2D screen 
-		\item Gap: No study systematically compared different non-immersive projection types
-	\end{itemize}
-	
-	\citefooter{Wenk et al., 2019, 2022, 2023; Bassano et al., 2022}
-\end{frame}
 
-
-\begin{frame}{Why Immersive VR Not Always Feasible in Clinical Settings}
+\begin{frame}{Immersive vs Non-Immersive XR: Clinical Reality}
 	\textbf{\textcolor{gbAqua}{Clinical Reality}}
 	
 	HMD adoption barriers:
@@ -619,14 +536,14 @@ avoidance and passive haptic interaction in real indoor environments?
 	
 	Most exergames and serious games rely on non-immersive setups, offering accessibility, affordability, and portability.
 	\\We lose the benefits of IVR: high sense of presence and everything related to it.
-	\\Little empirical guidance exists on which visualization modality is best.
+	\\Little empirical guidance exists on which visualization modality is best for non-immersive applications.
 	
 	\citefooter{Ren et al., 2024; Bassano et al., 2022}
 \end{frame}
 
 
 %% --- PAPER REFERENCE ---
-\begin{frame}{Study 3}
+\begin{frame}{Study 2}
 	\textbf{\textcolor{gbAqua}{Immersive versus Non-Immersive Virtual Reality Environments: Comparing Different Visualization Modalities in a Cognitive-Motor Dual-Task}}
 	
 	\vspace{0.5cm}
@@ -647,12 +564,12 @@ avoidance and passive haptic interaction in real indoor environments?
 	\textbf{\textcolor{gbAqua}{The Dilemma}}
 
 
-	When IVR unavailable, which modality is best?
+	When IVR unavailable, which visualization modality is the best?
 
 \end{frame}
 
 
-\begin{frame}{Study 3: Comparing Four Visualization Modalities}
+\begin{frame}{Study 2: Comparing Four Visualization Modalities}
 	\textbf{\textcolor{gbAqua}{Research Question}}
 	
 	When IVR is not feasible, which non-immersive VM best approximates its benefits in terms of sense of presence, usability, cognitive load, and task performance?
@@ -665,17 +582,17 @@ avoidance and passive haptic interaction in real indoor environments?
 \end{frame}
 
 
-\begin{frame}{Study 3: Three Hypotheses}
+\begin{frame}{Study 2: Three Hypotheses}
 	\textbf{\textcolor{gbAqua}{Three Hypotheses we tested}}
 	
 	\begin{itemize}
 		\item \textbf{H1}: IVR outperforms all non-immersive alternatives showing higher sense of presence, better usability, and lower cognitive load (control hypothesis)	
-		\item \textbf{H2}: POV (tracked perspective) is the best approximation of VR in term of sense of presence, usability and cognitive load;
+		\item \textbf{H2}: POV (tracked perspective) is the best approximation of IVR in term of sense of presence, usability and cognitive load;
 		\item \textbf{H3}: PERSP (fixed perspective) and ORTHO (orthographic) provide comparable sense of presence, usability, and cognitive load;
 		\end{itemize}
 \end{frame}
 
-\begin{frame}{Study 3 Methodology: Four Visualization Modalities}
+\begin{frame}{Study 2 Methodology: Four Visualization Modalities}
 	\begin{columns}[T]		
 		\column{0.3\textwidth}
 		\vspace{2.5cm}
@@ -700,7 +617,7 @@ avoidance and passive haptic interaction in real indoor environments?
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Study 3 Methodology: Video Demonstration}
+\begin{frame}{Study 2 Methodology: Video Demonstration}
 	\begin{center}
 		\includegraphics[width=0.85\linewidth, height=0.55\textheight, keepaspectratio]{figures/VisualizationMod/VisMod.png}\\[0.3cm]
 		\href{https://www.youtube.com/watch?v=k1AMaxmxgAM&t=3s}{%
@@ -713,7 +630,8 @@ avoidance and passive haptic interaction in real indoor environments?
 
 
 
-\begin{frame}{Study 3 Methodology: Task, Demographics and Measurements}
+
+\begin{frame}{Study 2 Methodology: Task, Demographics and Measurements}
 	\begin{columns}[T]
 		\column{0.65\textwidth}
 		\textbf{\textcolor{gbAqua}{Cognitive-Motor Dual Task (CMDT)}}
@@ -741,25 +659,27 @@ avoidance and passive haptic interaction in real indoor environments?
 	\citefooter{Schubert et al., 2001; Brooke, 1996; Hart \& Staveland, 1988}
 \end{frame}
 
-\begin{frame}{Study 3 Results: Sense of Presence}
+\begin{frame}{Study 2 Results: Sense of Presence}
 	\begin{columns}[c]
-		\column{0.3\textwidth}		
+		\column{0.4\textwidth}		
 		\begin{itemize}
 			\item Three IPQ subscales: spatial presence (SP), involvement (INV), realism (REAL). PRES refers to the general sense of ``being there''.
 			\item VR significantly higher presence than all non-immersive 
 			\item POV did NOT approximate VR well
 		\end{itemize}
 		
-		\column{0.7\textwidth}
+		\column{0.6\textwidth}
 		\includegraphics[width=\linewidth]{figures/VisualizationMod/Questionari/IPQ.png}
 		
-		{\tiny $^*p \leq 0.05$;\quad $^{**}p \leq 10^{-2}$;\quad $^{***}p \leq 10^{-3}$}
+		{\tiny One-way repeated measures ANOVA ($\alpha = 0.05$). Post-hoc pairwise comparisons where necessary}
+				
+		{\tiny Statistical significance: $^*p \leq 0.05$;\quad $^{**}p \leq 10^{-2}$;\quad $^{***}p \leq 10^{-3}$}
 	\end{columns}
 	
 	\citefooter{Pizzo et al., 2025}
 \end{frame}
 
-\begin{frame}{Study 3 Results: Usability}
+\begin{frame}{Study 2 Results: Usability}
 	\begin{columns}[c]
 		\column{0.3\textwidth}
 		\textbf{\textcolor{gbAqua}{From the literature}}
@@ -776,12 +696,12 @@ avoidance and passive haptic interaction in real indoor environments?
 	\citefooter{Pizzo et al., 2025}
 \end{frame}
 
-\begin{frame}{Study 3 Results: Cognitive Load}
+\begin{frame}{Study 2 Results: Cognitive Load}
 	\begin{columns}[c]
 		\column{0.3\textwidth}
 		\begin{itemize}			
 			\item VR vs.\ POV: statistically significant differences in physical demand, performance, and frustration sub-scales
-			\item Significant also in overall NASA-TLX score
+			\item Significant also in overall Raw NASA-TLX score
 		\end{itemize}
 		
 		\column{0.7\textwidth}
@@ -791,29 +711,13 @@ avoidance and passive haptic interaction in real indoor environments?
 	\citefooter{Pizzo et al., 2025}
 \end{frame}
 
-\begin{frame}{Study 3 Results: CMDT Performance}
-	\begin{columns}[c]
-		\column{0.3\textwidth}
-		\textbf{\textcolor{gbAqua}{Key Findings}}
-		\begin{itemize}
-			\item \textbf{Miscounted cats} (pink): can be positive or negative; 
-			\item \textbf{Untouched flowers} (green): inherently negative, reflects missed targets
-			\item \textbf{Wrongly touched objects} (blue): always positive, incorrect touches relative to total displayed
-		\end{itemize}
-		
-		\column{0.7\textwidth}
-		\includegraphics[width=\linewidth, height=0.8\textheight, keepaspectratio]{figures/VisualizationMod/ErroriPercentuali.png}
-	\end{columns}
-	
-	\citefooter{Pizzo et al., 2025}
-\end{frame}
 
-\begin{frame}{Study 3: Discussion \& Conclusions}
+\begin{frame}{Study 2: Discussion \& Conclusions}
 	\begin{columns}[T]
 		\column{0.5\textwidth}
 		\textbf{\textcolor{gbAqua}{Hypotheses}}
 		\begin{itemize}
-			\item \textbf{H1 partially accepted}: VR significantly higher presence and usability than non-immersive; no significant differences in cognitive load
+			\item \textbf{H1 partially accepted}: IVR significantly higher presence and usability than non-immersive; no significant differences in cognitive load
 			\item \textbf{H2 rejected}: POV does NOT approximate IVR well. Significant differences in presence, usability, and cognitive load subscales
 			\item \textbf{H3 accepted}: PERSP and ORTHO are comparable across all metrics
 		\end{itemize}
@@ -832,17 +736,26 @@ avoidance and passive haptic interaction in real indoor environments?
 	\citefooter{Pizzo et al., 2025}
 \end{frame}
 
-\begin{frame}{Study 3: Limitations and Future Works}
-	\textbf{\textcolor{gbAqua}{Limitation}}
-	POV condition not ecologically implemented: the frustum follows the tracked head, causing projections inconsistent with real-world perception. Requires reimplementation with asymmetric frustum.
-	\vspace{0.2cm}\\
-	\textbf{\textcolor{gbAqua}{Open Questions}}
-	\begin{itemize}
-		\item \textbf{Ecological POV}: Reimplement using an asymmetric frustum with focal plane aligned to the real screen, so that virtual object projections behave consistently with real-world perception
-		\item \textbf{Arm trajectories}: Study differences across modalities in users' reaching movements. Visualization may influence motor execution
-		\item \textbf{Embodiment}: Evaluate the sense of body ownership across the four conditions
-		\item Considering a more challenging CMDT
-	\end{itemize}
+\begin{frame}{Study 2: Limitations and Future Works}
+	\begin{columns}[T]
+		\column{0.55\textwidth}
+		\textbf{\textcolor{gbAqua}{Limitation}}
+		POV was not ecologically implemented: the frustum follows the tracked head, causing projections inconsistent with real-world perception.
+
+		\vspace{0.3cm}
+
+		\textbf{\textcolor{gbAqua}{Open Questions}}
+		\begin{itemize}
+			\item \textbf{Ecological POV}: asymmetric frustum aligned to the real screen
+			\item \textbf{Arm trajectories}: study reaching movements across modalities
+			\item \textbf{Embodiment}: evaluate body ownership across conditions
+			\item Consider a more challenging CMDT
+		\end{itemize}
+
+		\column{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/VisualizationMod/pov_sketch.png}
+	\end{columns}
 	
 	\citefooter{Pizzo et al., 2025}
 \end{frame}
@@ -860,133 +773,78 @@ avoidance and passive haptic interaction in real indoor environments?
 	\vfill
 \end{frame}
 
-
-\begin{frame}{Fit4MedRob: Target Population and Clinical Challenges}
-	\textbf{\textcolor{gbAqua}{Who}}
-	
-	Children with congenital or acquired neuromotor disorders, such as cerebral palsy (CP) or acquired brain injury (ABI)
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Challenges}}
-	
-	\begin{itemize}
-		\item Widely varying residual motor abilities
-		\item Limited tolerance for frustration
-		\item Strong need for intrinsically motivating activities to sustain the repetition required for neuroplasticity and motor learning
-	\end{itemize}
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Standard Controllers Are Ill Suited}}
-	
-	Not designed for children, no postural support, lack the ergonomic and therapeutic specificity required for meaningful motor training
-	
-	\citefooter{Alrashidi et al., 2023; Ravi et al., 2017; Levac et al., 2019}
-\end{frame}
-
-\begin{frame}{Exergames for Motor Learning}
-	\textbf{\textcolor{gbAqua}{Exergames and Motor Learning}}
-	
-	\begin{itemize}
-		\item Repetition of goal oriented tasks
-		\item Immediate feedback
-		\item Intrinsic motivation and sustained attention
-	\end{itemize}
-	
-	\vspace{0.2cm}
-	
-	Multimodal feedback helps children understand if the movement is correct and supports motor control.
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Clinical Evidence}}
-	
-	A systematic review and meta-analysis on XR assisted exergaming in children with cerebral palsy, \alert{45 studies, over 1500 participants}, confirmed significant improvements in global motor function and activities of daily living, and rated the technology as safe and well accepted
-	
-	\citefooter{Birckhead et al., 2019; Levac et al., 2019; Nossa et al., 2021; Tobaiqi et al., 2023}
-\end{frame}
-
-\begin{frame}{The Central Design Tension: Engagement vs Therapeutic Relevance}
-	
-	
+\begin{frame}{ActivePaws: Rationale and Design Principles}
 	\begin{columns}[t]
-		\column{0.48\textwidth}
-		\textbf{\textcolor{gbAqua}{Motor Precision, Low Appeal and Engagement}}
-		
-		Many exergames in research prioritize motor precision over visual appeal, with task isolated interfaces that prioritize movement repetition over playfulness.
-		
-		\column{0.48\textwidth}
-		\textbf{\textcolor{gbAqua}{High Appeal and Engagement, No Clinical Structure}}
-		
-		Wii Sports Resort in children with hemiplegic cerebral palsy: high engagement and adherence, but limited evidence of measurable clinical improvement
-	\end{columns}
-	
-	\vspace{0.3cm}
-	
-	\alert{Engagement alone is not sufficient without a targeted therapeutic structure, but at the same time is required to sustain repetition and motivation, fundamental in motor therapy.}
-	
-	\citefooter{Biffi et al., 2017; Robertson et al., 2010; Bassano et al., 2022; Chiu et al., 2014}
-\end{frame}
+		\column{0.5\textwidth}
+		\textbf{\textcolor{gbAqua}{Target Population}}
+		\small
+		\begin{itemize}
+			\setlength\itemsep{0em}
+			\item Children with cerebral palsy (CP) or acquired brain injury (ABI)
+			\item Widely varying motor abilities, limited tolerance for frustration
+			\item Standard controllers lack postural support and therapeutic specificity
+		\end{itemize}
 
-\begin{frame}{Beyond Standardization: The Case for Personalization}
-	\textbf{\textcolor{gbAqua}{Standardization}}
-	
-	Uniform, evidence based protocols. Consistent delivery. A necessary step toward a reliable, adoptable clinical tool
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Why Personalization Matters Most for This Population}}
-	
-	\begin{itemize}
-		\item Each child has a distinct disorder severity, developmental stage, and evolving needs
-		\item Configurable movements accommodate different impairment profiles
-		\item Adjustable thresholds let therapists modulate difficulty and sensitivity
-		\item Real time adaptive features prevent frustration, facilitate success
-	\end{itemize}
-	
-	\citefooter{Felipe et al., 2020; Levitt et al., 2018; Figueiredo et al., 2025a, 2025b; Dominguez et al., 2020}
-\end{frame}
+		\vspace{0.2cm}
+		\textbf{\textcolor{gbAqua}{Exergames for Motor Learning}}
+		\small
+		\begin{itemize}
+			\setlength\itemsep{0em}
+			\item Repetition, immediate feedback, intrinsic motivation sustain neuroplasticity
+			\item Meta analysis: 45 studies, confirms efficacy, safety, acceptance
+		\end{itemize}
 
-\begin{frame}{From Theoretical Foundations to System Design}
-	These considerations shaped the design of \textbf{ActivePaws}, a suite of three exergames.
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Developed in Continuous Feedback Loop}} from biomedical engineers and therapists.
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Semantic Coherence}}:	Movements are intuitively linked to their in game effect. Reinforces both engagement and therapeutic purpose.
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{User Centered Design}}
-	\begin{itemize}
-		\item Alternative gestures accommodate different impairment profiles
-		\item Visually appealing layout yet simple enough to keep the motor task in focus
-		\item Adjustable thresholds let therapists modulate game difficulty and sensitivity
-		\item Real time adaptive features
-	\end{itemize}
-	
-	\vspace{0.3cm}
-	
-\alert{Goal}: a system genuinely engaging and accessible, where gameplay demands therapeutically meaningful movement substaining motivation.
-	
+		\column{0.5\textwidth}
+		\textbf{\textcolor{gbAqua}{The Design Tension}}
+		\small
+		\begin{itemize}
+			\setlength\itemsep{0em}
+			\item Clinically focused exergames often sacrifice engagement
+			\item Highly engaging games (e.g. Wii Sports Resort) show limited clinical evidence
+		\end{itemize}
+
+		\vspace{0.2cm}
+		\textbf{\textcolor{gbAqua}{Why Personalization}}
+		\small
+		\begin{itemize}
+			\setlength\itemsep{0em}
+			\item Disorder severity and needs vary child to child
+			\item Configurable movements and adjustable thresholds prevent frustration
+		\end{itemize}
+	\end{columns}	
+	\vspace{-0.15em}
+
+	\citefooter{Levac et al., 2019; Birckhead et al., 2019; Nossa et al., 2021; Tobaiqi et al., 2023; Felipe et al., 2020; Levitt et al., 2018}
 \end{frame}
 
 \begin{frame}{The ActivePaws System}
 	\small A non-immersive exergame suite controlled by the Playcuff wearable orthosis.
-	
-	\vspace{0.3cm}	
-	\includegraphics[width=0.8\linewidth]{figures/AP/AP_Scheme.png}	
 
+	\begin{columns}[T]
+		\column{0.62\textwidth}
+		\vspace{0.2cm}
+		\includegraphics[width=\linewidth]{figures/AP/AP_Scheme.png}
+
+		\column{0.36\textwidth}
+		\textbf{\textcolor{gbAqua}{Semantic Coherence}}
+
+		Movements intuitively linked to in game effect
+
+		\vspace{0.2cm}
+		\textbf{\textcolor{gbAqua}{User Centered Design}}
+		\begin{itemize}
+			\setlength\itemsep{0em}
+			\item Alternative gestures per impairment
+			\item Adjustable thresholds
+			\item Real time adaptive features
+		\end{itemize}
+	\end{columns}
 \end{frame}
 
 \begin{frame}[t]{The Playcuff Wristband}
 	\begin{columns}[T]
 		\column{0.55\textwidth}
-		Soft wearable wrist orthosis developed at CNR-ICMATE for pediatric upper limb rehabilitation
+		Soft wearable wrist orthosis developed at \textbf{CNR-ICMATE} for pediatric upper limb rehabilitation
 		
 		\vspace{0.1cm}
 		
@@ -1059,33 +917,6 @@ avoidance and passive haptic interaction in real indoor environments?
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Clinical Configuration and Tutorial}
-	\begin{columns}[T]
-		\column{0.5\textwidth}
-		\textbf{\textcolor{gbAqua}{Movement Configuration}}
-		
-		Alternative gestures and adjustable intensity thresholds per action
-		
-		\vspace{0.2cm}
-		
-		\alert{Calibration scene}: To choose among the provided threshold a calibration scene has been recently added to choose the best one for each patient.
-		
-		\textbf{\textcolor{gbAqua}{Game Settings}}
-		
-		Different in-game features configurable to taylor training sessions and their difficulty, important to prevent frustration
-		
-		\column{0.5\textwidth}
-		\textbf{\textcolor{gbAqua}{Two-Phase Tutorial}}
-		
-
-		\begin{itemize}
-			\item Illustrated slides with voice over, no reading required
-			\item Gated practical phase: gestures must be correctly performed before the game begins
-			\item Adapts to configured alternative gestures
-			\item Skippable at any point from the pause menu
-		\end{itemize}
-	\end{columns}
-\end{frame}
 
 \begin{frame}{ActivePaws: The Exergames}
 	\begin{columns}[T]
@@ -1151,147 +982,61 @@ avoidance and passive haptic interaction in real indoor environments?
 	
 	\begin{center}
 		\includegraphics[width=0.85\linewidth, height=0.55\textheight, keepaspectratio]{figures/intro/ap.png}\\[0.3cm]
-		\href{https://drive.google.com/file/d/1a-kOVCpLSqV-s8Yc_942pxdX89hdeTBS/view?usp=sharing}{%
+		\href{https://drive.google.com/file/d/1_czd7VQjB-M-K2idT15yYh_TjNF8Tdlx/view?usp=sharing}{%
 			\textcolor{gbAqua}{\textbf{$\blacktriangleright$ Video}}%
 		}
 	\end{center}	
 \end{frame}
 
-\begin{frame}{Study 4}
+\begin{frame}{Study 3}
     \textbf{\textcolor{gbAqua}{ActivePaws and Playcuff: Pilot Evaluation of a Non-Immersive Exergame Suite Controlled by a Wearable Device}}
     
     \vspace{0.5cm}
     
     
         \small\textit{Based on:}
-        
+    
         \vspace{0.2cm}
         
         {\footnotesize M. Pizzo, et al., ``ActivePaws and Playcuff: Pilot Evaluation of a Non-Immersive Exergame Suite Controlled by a Wearable Device,'' IEEE ISMAR-Adjunct, 2025}
    
 \end{frame}
 
-\begin{frame}{Study 4: Goal and Methods}
-	\textbf{\textcolor{gbAqua}{Goal}}
-	
-	Preliminary step toward clinical application, assessing two main aspects: children's \textbf{engagement} during gameplay, \textbf{usability} of the exergames
-	
-	\textbf{\textcolor{gbAqua}{Experiments}}
-	
-	12 participants, aged 6-14, 10 minutes of gameplay: Swift Rescuer and Sledding Adventures.
-	
-	\vspace{0.3cm}
-	
+\begin{frame}{Study 3: Pilot Evaluation and Impact on Design}
+	\textbf{\textcolor{gbAqua}{Goal \& Methods}}
+	\small
+	Preliminary step toward clinical application: assessing \textbf{engagement} and \textbf{usability}.\\
+	12 healthy children (6--14y), single session, 10 min: Swift Rescuer and Sledding Adventures. Adapted SUS for Kids and UES-SF, general questions on appreciation, game logs.
+
+	\vspace{0.25cm}
 	\begin{columns}[T]
-		\begin{column}{0.5\textwidth}
-			\textbf{\textcolor{gbAqua}{Participants}}
-			\begin{itemize}
-				\item \textbf{Healthy} children
-				\item Most had gaming experience
-				\item Tutorial at the beginning of each level
-				\item \textbf{Single session} study
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\textbf{\textcolor{gbAqua}{Measures}}
-			\begin{itemize}
-				\item Questions on overall experience
-				\item System Usability Scale for Kids (adapted)
-				\item User Engagement Scale (adapted)
-				\item Game performance logs
-			\end{itemize}
-		\end{column}
+		\column{0.5\textwidth}
+		\textbf{\textcolor{gbAqua}{Key Results}}
+		\small
+		\begin{itemize}
+			\setlength\itemsep{0em}
+			\item 91\% wanted to play again, $>$90\% no frustration
+			\item 100\% found games fun, liked graphics
+			\item Sledding Adventures preferred over Swift Rescuer
+			\item SR accuracy dropped across levels (L1: $0.69\pm0.21$ $\to$ L3: $0.47\pm0.10$), attributed to \textbf{fixed gesture thresholds}
+			\item Wristband based control proved effective
+		\end{itemize}
+
+		\column{0.5\textwidth}
+		\textbf{\textcolor{gbAqua}{Impact on Suite Design}}
+		\small
+		\begin{itemize}
+			\setlength\itemsep{0em}
+			\item Motivated development of \textbf{Galaxy Drift} as third exergame
+			\item Enabled \textbf{configurable gesture thresholds}, introduced calibration scene
+			\item Introduced \textbf{adaptive features} for accessibility
+			\item Tuned SR levels, added dedicated \textbf{Level 4}
+		\end{itemize}
 	\end{columns}
-	
-	\citefooter{Pizzo et al., IEEE ISMAR-Adjunct, 2025}
-\end{frame}
-\begin{frame}{Study 4: Post-Game Questionnaires Results}
-	\begin{columns}[T]
-		\begin{column}{0.48\textwidth}
-			\textbf{\textcolor{gbAqua}{General questions}}
-			\begin{itemize}
-				\item SA was preferred
-				\item SR more challenging but still engaging
-				\item 91\% wanted to play again
-			\end{itemize}
-			
-			\vspace{0.3cm}
-			
-			\textbf{\textcolor{gbAqua}{Usability}}
-			\begin{itemize}
-				\item $>$90\% no frustration
-				\item $>$70\% would play on phone
-				\item $>$50\% easy to use without help
-				\item $>$80\% friends would learn quickly
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			\centering
-			\textbf{\textcolor{gbAqua}{User engagement questions}}
-			
-			\vspace{0.2cm}
-			
-			\includegraphics[width=0.7\textwidth]{figures/AP/plot.png}
-			
-			\vspace{0.2cm}
-			
-			\raggedright
-			\begin{itemize}
-				\item 100\% found the games fun, 100\% liked colors and graphics
-				\item 81\% felt very or somewhat absorbed
-			\end{itemize}
-		\end{column}
-	\end{columns}
-	
+
 	\citefooter{Pizzo et al., IEEE ISMAR-Adjunct, 2025}
 \end{frame}
 
-\begin{frame}{Study 4: Game Logs Results}
-	\textbf{\textcolor{gbAqua}{Swift Rescuer}} (accuracy = shots hitting animals / total)
-	
-	\begin{itemize}
-		\item \textbf{L1}: $0.69 \pm 0.21$ $\rightarrow$ high variability
-		\item \textbf{L2}: $0.43 \pm 0.15$ $\rightarrow$ lower variability, more consistent
-		\item \textbf{L3}: $0.47 \pm 0.10$ $\rightarrow$ only skilled players performed it
-	\end{itemize}
-	\textit{Obs.}: few row changes
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Sledding Adventures}} (accuracy = collected snowman parts + coins / total)
-	
-	\begin{itemize}
-		\item \textbf{L3 only}: $0.77 \pm 0.13$
-	\end{itemize}
-	\textit{Obs.}: consistent results across ages
-	
-	\citefooter{Pizzo et al., IEEE ISMAR-Adjunct, 2025}
-\end{frame}
-
-
-\begin{frame}{Study 4: Key Takeaways and Impact on Design}
-	\textbf{\textcolor{gbAqua}{Key Takeaways}}
-	
-	\begin{itemize}
-		\item Sledding Adventures was preferred over Swift Rescuer due to its game mechanics		
-		\item Accuracy drop in Swift Rescuer across levels attributed to fixed gesture thresholds
-		\item Wristband-based control proved effective across exergames
-	\end{itemize}
-	
-	\vspace{0.3cm}
-	
-	\textbf{\textcolor{gbAqua}{Impact on Suite Design}}
-	
-	\begin{itemize}
-		\item Motivated development of \textbf{Galaxy Drift} as a third exergame		
-		\item Enabled \textbf{configurable gesture intensity thresholds} introduced calibration scene
-		\item Introduced \textbf{adaptive features} for improved accessibility
-		\item Tuned Swift Rescuer levels and introduced a dedicated \textbf{Level 4} for the ordered modality
-	\end{itemize}
-	
-	
-	\citefooter{Pizzo et al., IEEE ISMAR-Adjunct, 2025}
-\end{frame}
 \begin{frame}{Ongoing Work: Toward Clinical Validation}
 	\textbf{\textcolor{gbAqua}{Research Questions}}
 	
@@ -1316,29 +1061,94 @@ avoidance and passive haptic interaction in real indoor environments?
 	\centering
 	\textit{A preparatory step toward the Fit4MedRob clinical investigation}
 \end{frame}
+\begin{frame}{Overall Contributions: Three Complementary Challenges}
 
-\begin{frame}{Overall Contributions}
-\begin{itemize}
-    \item \textbf{Safety}: 3DF Zephyr best accuracy/time trade-off (non-expert users); Colmap wins on pure accuracy. Kinect v1 and ReCap Photo sufficient for obstacle avoidance and passive haptic interaction, no expensive hardware needed.
-    \item \textbf{User Experience \& Task Effectiveness}: IVR outperforms all non-immersive alternatives (presence, usability, task performance). Fixed perspective is the best non-immersive choice; fixed orthographic a viable fallback; tracked POV performs worst.
-    \item \textbf{Engagement \& Task Effectiveness}: ActivePaws, co-designed with therapists around gesture-action semantic coherence, shows high enjoyment and usability in a pilot with typically developing children.
-   \end{itemize}
+	\begin{columns}[t]
+		\column{0.32\textwidth}
+		\centering
+		\textbf{\textcolor{gbAqua}{Safety}}
+		\small
+		\vspace{0.15cm}
+
+		\textit{3D Reconstruction}
+
+		\vspace{0.15cm}
+		\raggedright
+		Kinect v1 and ReCap Photo sufficient for obstacle avoidance and passive haptics, no expensive hardware needed
+
+		\vspace{0.3cm}
+		\centering
+		{\footnotesize\textit{Matters most when:} users physically move in immersive, unconstrained space}
+
+		\column{0.32\textwidth}
+		\centering
+		\textbf{\textcolor{gbAqua}{User Experience}}
+		\small
+		\vspace{0.15cm}
+
+		\textit{Visualization Modalities}
+
+		\vspace{0.15cm}
+		\raggedright
+		IVR outperforms all non-immersive alternatives; fixed perspective is the best fallback when IVR is not feasible
+
+		\vspace{0.3cm}
+		\centering
+		{\footnotesize\textit{Matters most when:} IVR is clinically or logistically unavailable}
+
+		\column{0.32\textwidth}
+		\centering
+		\textbf{\textcolor{gbAqua}{Engagement}}
+		\small
+		\vspace{0.15cm}
+
+		\textit{ActivePaws System}
+
+		\vspace{0.15cm}
+		\raggedright
+		Co-design around gesture-action semantic coherence yields high enjoyment and usability with typically developing children
+
+		\vspace{0.3cm}
+		\centering
+		{\footnotesize\textit{Matters most when:} sustained motivation drives therapeutic adherence}
+	\end{columns}
+\vspace{0.5cm}
+
+\textbf{\alert{Which one dominates depends on the application's goal and the underlying technology, not on a fixed hierarchy.}}
 \end{frame}
 
 \begin{frame}{Limitations}
-\begin{itemize}
-    \item \textbf{Study populations \& sample size}: all studies used small pools of healthy participants, limiting statistical power and generalizability, especially for ActivePaws where engagement dynamics may differ in children with neuromotor impairments.
-    \item \textbf{Experimental design constraints}: the photogrammetry benchmark used only a synthetic dataset and default parameters; the CMDT in the VM study was too easy to fully differentiate conditions; only 2 of 3 ActivePaws games were evaluated.
-    \item \textbf{Technological currency}: the photogrammetry work predates integrated HMD scene understanding (e.g.\ Meta Quest 3), which now narrows the need for custom reconstruction pipelines; the POV condition's non-ecological geometry was identified only at the end of the study.
-    \item \textbf{Outcome measurement}: arm trajectories in the VM study were not recorded, leaving movement naturalness (relevant for rehabilitation) unexplored.
-\end{itemize}
+	\begin{itemize}
+		\item \textbf{Small samples}
+		\begin{itemize}
+			\small
+			\item All studies involved small groups of healthy participants, limiting how much we can generalize
+			\item This matters especially for ActivePaws, since engagement may differ in children with real neuromotor impairments
+		\end{itemize}
+
+		\vspace{0.2cm}
+		\item \textbf{Study design}
+		\begin{itemize}
+			\small
+			\item The first study used only one depth-sensing device and a subset of available tools for photogrammetry using their default settings
+			\item The cognitive-motor task in Study 2 was probably too easy to reveal differences in performance across VMs
+		\end{itemize}
+
+		\vspace{0.2cm}
+		\item \textbf{Technological currency}
+		\begin{itemize}
+			\small
+			\item The photogrammetry work was done before headsets like Meta Quest 3 offered built in 3D scene understanding, reducing the need for custom reconstruction pipelines
+			\item We only realized the POV condition had geometry issues after the study was complete
+		\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Future Work}
 \begin{itemize}
-    \item \textbf{HMD scene understanding}: Meta Quest 3 as direct input for haptic pipelines
-    \item \textbf{Visualization modality}: ecological asymmetric-frustum POV vs.\ perspective/ortho, with a more demanding CMDT
-    \item \textbf{ActivePaws}: validation of all 3 games, longitudinal studies with neuromotor patients, transferable design guidelines
+    \item \textbf{HMD scene understanding}: Meta Quest 3 as direct input for passive haptics pipelines
+    \item \textbf{Visualization modality}: ecological asymmetric-frustum POV vs.\ perspective/ortho, with a more demanding CMDT, evaluating arms trajectories and embodiment
+    \item \textbf{ActivePaws}: longitudinal studies with our target population (waiting for the Fit4MedRob clinical trial approval)
 \end{itemize}
 \end{frame}
 
